@@ -2,13 +2,18 @@
 <html lang="zh-CN">
 
 <head>
-  <title>Mingyang Wu</title>
+  <title>Homepage</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
     content="Mingyang Wu's personal academic homepage">
   <link rel="stylesheet" href="https://use.typekit.net/quv7bsd.css">
   <link rel="stylesheet" href="style.css" />
+  <style>
+    body, h1, h2, h3, p, a, li, button {
+      font-family: "Times New Roman", Times, serif;
+    }
+  </style>
 
   <script type="text/javascript">
     var sc_project = 12991604;
@@ -26,7 +31,7 @@
 <body>
   <div id="main-container">
     <header id="page-header">
-      <nav aria-label="Main navigation"> 
+      <nav aria-label="Main navigation">
         <a href="#resume-section">Resume</a>&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;
         <a href="mailto:mingyang@tamu.edu">Email</a>&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;
         <a href="index.html">Home</a>
@@ -36,29 +41,28 @@
     <main id="content-area">
       <section id="profile" aria-labelledby="profile-name">
         <div id="profile-pic-container"> <img src="images/mingyang.png" alt="Mingyang Wu's profile picture">
-          <!-- <p>
-            <a href="https://scholar.google.com/citations?user=5Fh1Ra8AAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a>&nbsp;/&nbsp; 
-            <a href="https://x.com/mingyangwu_"target="_blank" rel="noopener noreferrer">Twitter</a>&nbsp;/&nbsp;
-            <a href="https://github.com/mingyang5" target="_blank" rel="noopener noreferrer">Github</a>
-          </p> -->
-        </div>
+          </div>
         <div id="profile-intro">
           <h1 id="profile-name">Mingyang Wu</h1>
           <p>
-            Greetings! <br>
-            I am a master student in the Department of Computer Science and Engineering at <a href="https://engineering.tamu.edu/cse/index.html" target="_blank" rel="noopener noreferrer">Texas A&M University</a>,
-            advised by Prof. <a href="https://vztu.github.io/" target="_blank" rel="noopener noreferrer">Zhengzhong Tu</a> in <a href="https://taco-group.github.io/index.html" target="_blank" rel="noopener noreferrer">Taco-Group</a>. 
-            Previously, I completed an internship at <a href="https://www.bosch.com/stories/car-software-electronics/" target="_blank" rel="noopener noreferrer">Bosch (Cross-Domain Computing Solutions Division, XC)</a>. <br>
-            
-            Research Interests: Controllable Video Generation and Multi-modal Generative AI.
+            I am a master student majoring in Computer Science at <a href="https://engineering.tamu.edu/cse/index.html" target="_blank" rel="noopener noreferrer">Texas A&M University</a>,
+            advised by Prof. <a href="https://vztu.github.io/" target="_blank" rel="noopener noreferrer">Zhengzhong Tu</a> in <a href="https://taco-group.github.io/index.html" target="_blank" rel="noopener noreferrer">Taco-Group</a>.
+            Previously, I completed an internship at <a href="https://www.bosch.com/stories/car-software-electronics/" target="_blank" rel="noopener noreferrer">Bosch (Cross-Domain Computing Solutions Division, XC)</a>.
           </p>
           <p>
-            Email: mingyang [at] tamu [dot] edu <br>
+            <i>Research Interests: Controllable Content (Video, Image, and Human Motion) Generation.</i><br>
+          </p>
+          <p>
+            Email: mingyang [at] tamu [dot] edu
+            <br>
             <a href="https://scholar.google.com/citations?user=5Fh1Ra8AAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a>&nbsp;&nbsp;/&nbsp;&nbsp;
             <a href="https://github.com/mingyang5" target="_blank" rel="noopener noreferrer">Github</a> &nbsp;&nbsp;/&nbsp;&nbsp;
             <a href="https://x.com/mingyangwu_"target="_blank" rel="noopener noreferrer">Twitter</a>&nbsp;&nbsp;/&nbsp;&nbsp;
             <a href="https://www.linkedin.com/in/mingyang-wu-606abb305/"target="_blank" rel="noopener noreferrer">Linkedin</a>
+            <br>
+            <i>Feel free to contact me by email if you are interested in discussing or collaborating with me.</i>
           </p>
+          
         </div>
       </section>
 
@@ -66,83 +70,78 @@
         <h2 id="news-heading">Recent News</h2>
         <ul>
           <li> [2025.03] 1st place in NTIRE 2025 Challenge on <a href="https://arxiv.org/abs/2504.13131" target="_blank" rel="noopener noreferrer">Short-form UGC Video Quality Assessment and Enhancement</a> in CVPR 2025</li>
-          
+
           <span id="moreNews">
             <li> [2023.08] Open-source contribution: Object detection best practice for Ascend CANN [<a href="https://gitee.com/ascend/samples/tree/master/best_practices/contrib/part_detection" target="_blank" rel="noopener noreferrer">Gitee</a>]</li>
           </span>
         </ul>
-        <button type="button" onclick="toggleNews()" id="moreNewsBtn" class="showBtn" aria-expanded="false" aria-controls="moreNews">Show more...</button> 
+        <button type="button" onclick="toggleNews()" id="moreNewsBtn" class="showBtn" aria-expanded="false" aria-controls="moreNews">Show more...</button>
         <button type="button" onclick="toggleNews()" id="lessNewsBtn" class="showBtn" aria-expanded="true" aria-controls="moreNews">Show less...</button>
       </section>
-      
+
       <section class="content-section research" id="publications" aria-labelledby="pubs-heading">
         <h2 id="pubs-heading">Publications</h2>
+        <p style="margin-top: -10px; margin-left: 30px; font-style: italic; color: var(--color-text-secondary);">
+          * denotes equal contribution
+        </p>
         <article class="research-proj">
             <a href="#" class="research-thumb">
-                <img src="images/projects/page.png" alt="Placeholder for publication thumbnail">
+                <img src="images/projects/MMHU_teaser.png" alt="Placeholder for publication thumbnail">
             </a>
-            <div class="research-proj-details"> <h3 class="research-proj-title"><a href="#">Paper Title 1</a></h3>
+            <div class="research-proj-details"> <h3 class="research-proj-title"><a href="#"></a></h3>
                 <p>
-                    Author <br>
-                    Conference <br>
+                    Submitted to NeurIPS 2025 <br>
                     <a href="#">Webpage</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
                     <a href="#">Paper</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                    <a href="#">Code</a>
+                    <a href="#">Datasets</a>
                 </p>
             </div>
         </article>
         <br>
-        <article class="research-proj">
-            <a href="#" class="research-thumb">
-                <video playsinline muted autoplay loop width="180px" aria-label="Placeholder video for publication 2">
-                    <source src="" type="video/mp4"> Your browser does not support the video tag.
-                </video>
-            </a>
-            <div class="research-proj-details"> <h3 class="research-proj-title"><a href="#">Paper Title 2</a></h3>
-                <p>
-                    Author <br>
-                    Conference <br>
-                    <a href="#">Webpage</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                    <a href="#">Paper</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                    <a href="#">Code</a>
-                </p>
-            </div>
-        </article>
       </section>
 
       <section class="content-section experience" id="experience" aria-labelledby="experience-heading">
         <h2 id="experience-heading">Experience</h2>
-        <article class="experience-details"> 
+        <article class="experience-details">
           <a href="https://www.tamu.edu/" target="_blank" rel="noopener noreferrer" class="experience-thumb"><img src="images/experiments/tamu.svg" alt="Texas A&M University logo"></a>
           <div class="experience-info">
             <h3><a href="https://www.tamu.edu/" target="_blank" rel="noopener noreferrer" class="experience-title">Texas A&M University, TX</a></h3>
             <p>
-              Master Student in Computer Science (Thesis) <br>
+              Graduate Research Assistent<br>
               2024.08 - Present <br>
               Advisor: Prof. <a href="https://vztu.github.io/" target="_blank" rel="noopener noreferrer">Zhengzhong Tu</a>
             </p>
           </div>
         </article>
 
-        <article class="experience-details"> 
+        <article class="experience-details">
           <a href="#" class="experience-thumb"><img src="images/experiments/bosch.svg" alt="Bosch logo"></a>
           <div class="experience-info">
             <h3><a href="https://www.bosch.com.cn/products-and-services/mobility/" class="experience-title">Bosch (XC), Shanghai</a></h3>
             <p>
               Perception Algorithm Intern <br>
               2024.02 - 2024.06 <br>
+              Mentor: Jianwei Zhang, Sheng Xu, <a href="https://cn.linkedin.com/in/颖谦-吴-946122272" target="_blank" rel="noopener noreferrer">Yingqian Wu</a>
             </p>
           </div>
         </article>
       </section>
 
+      <section class="content-section awards" id="academic" aria-labelledby="academic-heading">
+        <h2 id="academic-heading">Academic Services</h2>
+        <ul>
+          <li>Reviwer: </li>
+        </ul>
+      </section>
+
       <section class="content-section awards" id="awards" aria-labelledby="awards-heading">
-        <h2 id="awards-heading">Awards</h2>
+        <h2 id="awards-heading">Honors and Awards</h2>
         <ul>
           <li>Outstanding Graduates of Zhejiang Province, 2024</li>
-          <li><a href="#">Excellent Student Scholarship</a> (Top 10 University-wide, Highest University Honor Scholarship), 2024</li>
+          <li><a href="#">Excellent Student Scholarship</a> (Top 10 Recipients among 20,000 undergraduates, Highest University Honor Scholarship), 2024</li>
           <li><a href="#">National Scholarship</a> (Top 0.2% nationwide), 2022</li>
           <li>Zhejiang Government Scholarship (Top 3%), 2023, 2021</li>
+          <li>First-Class Scholarship (Top 3%), 2021, 2022, 2023</li>
         </ul>
       </section>
 
@@ -151,7 +150,7 @@
         <div class="misc-content-container">
             <span class="misc-main-text">What will be added to this website later ....</span>
             <br>
-            <span class="misc-update-text">Update: May.01, 2025</span>
+            <span class="misc-update-text">Update: May, 2025.</span>
         </div>
         <br>
       </section>
