@@ -1,3 +1,3 @@
-There’s Mingyang. 
+My personal website.
 
-Welcome to the source code of my [academic homepage](https://mingyang5.github.io/).
+Modified from © Pingchuan Ma
