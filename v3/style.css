@@ -1,0 +1,470 @@
+/* CSS Reset: http://meyerweb.com/eric/tools/css/reset */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, main { /* Added main */
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/**************************************************/
+/* Variables & Global Styles */
+/**************************************************/
+:root {
+    --font-primary: 'roboto', sans-serif; /* typekit font name might be different */
+    --color-text-primary: #191e3f;      /* Changed from #a0a8b0 for better contrast on white bg */
+    /* --color-text-secondary: #555b6e; */
+    --color-text-secondary: #a0a8b0;     /* A slightly lighter shade than primary */
+    --color-text-subtle: #a0a8b0;       /* Original color for less important text */
+    --color-link: #4a85c8;
+    --color-link-hover: #3a6a9f;        /* Darker shade for hover */
+    --color-heading: #003373;
+    --color-border: #ddd;
+    --color-accent: #49bf9d;
+    --color-accent-light: #a4dfce;
+    --color-highlight: #fdc450;
+
+    --spacing-unit: 8px;
+    --container-width: 960px;
+}
+
+body {
+    font-family: var(--font-primary);
+    color: var(--color-text-primary);
+    background-color: #fff; /* Assuming a white background */
+    line-height: 1.6; /* Improved default line-height for readability */
+}
+
+#main-container { /* Renamed from #main */
+    width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 calc(var(--spacing-unit) * 2); /* Added some padding */
+}
+
+p {
+    font-size: 14px;
+    line-height: 1.7; /* 24px / 14px approx */
+    margin-bottom: calc(var(--spacing-unit) * 2); /* 16px */
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-link);
+    transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out; /* Smooth transition */
+}
+
+a:hover {
+    color: var(--color-link-hover);
+    border-bottom: 1px solid var(--color-link-hover);
+}
+
+i {
+    font-style: italic;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--color-heading);
+    margin-top: calc(var(--spacing-unit) * 3); /* 24px */
+    margin-bottom: calc(var(--spacing-unit) * 2); /* 16px */
+    line-height: 1.3;
+}
+
+h1 { /* For site title or main page heading */
+    font-size: 28px; /* Increased slightly */
+}
+
+h2 { /* For section titles */
+    font-size: 24px;
+    /* width: 100%; */ /* Handled by section padding */
+    /* margin: 30px auto 20px 30px; */ /* Replaced with section padding */
+    padding-left: calc(var(--spacing-unit) * 2); /* Adjust as needed if specific to h1 */
+}
+
+h3 { /* For sub-section titles like project titles */
+    font-size: 18px; /* Increased slightly */
+    line-height: 1.5; /* 26px / 16px approx */
+    /* margin-left: 30px; */ /* Handled by parent padding */
+    /* margin-bottom: 15px; */
+}
+
+
+/**************************************************/
+/* Header */
+/**************************************************/
+#page-header { /* Renamed from #header */
+    height: 58px; /* Consider using min-height if content can wrap */
+    font-size: 14px;
+    line-height: 58px;
+    padding-top: 10px; /* This might make content not vertically centered */
+    text-align: right;
+    border-bottom: 1px solid var(--color-border);
+    padding-right: calc(var(--spacing-unit) * 4); /* 30px -> 32px */
+    background-color: #fff; /* Ensure header has a background for translateY */
+    position: sticky; /* For scroll effect with translateY, or fixed if always on top */
+    top: 0;
+    z-index: 1000;
+    transition: transform 0.3s ease-out; /* Moved transition here */
+}
+
+#page-header nav a { /* More specific selector for nav links */
+    text-decoration: none;
+    border-bottom: none;
+    color: var(--color-text-subtle);
+    margin-left: calc(var(--spacing-unit) * 2); /* Space out links */
+}
+
+#page-header nav a:hover {
+    color: var(--color-link);
+    border-bottom: none; /* Override global a:hover */
+}
+
+/**************************************************/
+/* Profile Section */
+/**************************************************/
+#profile {
+    padding: calc(var(--spacing-unit) * 4) calc(var(--spacing-unit) * 4) calc(var(--spacing-unit) * 1.25) calc(var(--spacing-unit) * 4); /* 30px 30px 10px 30px */
+    border-bottom: 1px solid var(--color-border);
+    display: flex; /* Using flexbox for layout */
+    gap: calc(var(--spacing-unit) * 5); /* 40px */
+    align-items: flex-start; /* Align items to the top */
+}
+
+#profile-pic-container { /* Renamed from #profile-pic */
+    /* float: left; */ /* Replaced by flex item */
+    /* margin-right: 40px; */ /* Replaced by gap */
+    text-align: center;
+    flex-shrink: 0; /* Prevent image container from shrinking */
+}
+
+#profile-pic-container img { /* Styling the image directly */
+    width: 220px;
+    border-radius: 10px;
+    margin-bottom: calc(var(--spacing-unit) * 2.25); /* 18px */
+    display: block; /* Remove extra space below image */
+}
+
+#profile-pic-container p {
+    margin-bottom: 0; /* Remove default p margin if it's just for links */
+}
+
+#profile-intro {
+    flex-grow: 1; /* Allow intro to take remaining space */
+}
+
+#profile-intro #profile-name { /* ID selector for h1 */
+    font-size: 24px; /* Kept from original */
+    line-height: 1; /* 24px */
+    margin-top: 0; /* Remove default h1 margin if it's the first element */
+    margin-bottom: calc(var(--spacing-unit) * 2.5); /* 20px */
+    color: var(--color-heading);
+}
+
+#profile-intro p {
+    margin-bottom: calc(var(--spacing-unit) * 1.25); /* 10px */
+    color: var(--color-text-secondary);
+}
+#profile-intro p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* Clearfix for floated elements (if not using flex/grid) */
+/* .clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+} */
+
+/**************************************************/
+/* Content Sections (News, Research, etc.) */
+/**************************************************/
+.content-section {
+    padding: calc(var(--spacing-unit) * 2.5) 0; /* 20px top/bottom */
+    border-bottom: 1px solid var(--color-border);
+}
+.content-section:last-child {
+    border-bottom: none; /* No border for the last section */
+}
+
+.content-section h2 {
+    margin-top: calc(var(--spacing-unit) * 1.25); /* 10px */
+    margin-bottom: calc(var(--spacing-unit) * 2.5); /* 20px */
+    padding-left: calc(var(--spacing-unit) * 3.75); /* 30px */
+}
+
+.content-section ul {
+    font-size: 14px;
+    line-height: 1.7; /* 24px */
+    list-style-position: inside;
+    list-style-type: disc;
+    margin-left: calc(var(--spacing-unit) * 3.75); /* 30px */
+    margin-bottom: var(--spacing-unit);
+    color: var(--color-text-secondary);
+}
+.content-section ul li {
+    margin-bottom: var(--spacing-unit); /* Space between list items */
+}
+
+.showBtn { /* Common style for show/less buttons */
+    /* margin-top: calc(var(--spacing-unit) * 1.25); */
+    margin-top: 0;
+    font-size: 14px;
+    line-height: 1.7; /* 24px */
+    /* float: left; */ /* Avoid float if possible, use inline-block or flex for layout */
+    display: inline-block; /* Allows margin and doesn't break flow */
+    margin-right: var(--spacing-unit); /* Space between buttons if they appear together */
+    margin-left: calc(var(--spacing-unit) * 3.75);
+    background: none; /* Make button look like a link */
+    border: none;
+    padding: 0;
+    color: var(--color-heading);
+    cursor: pointer;
+    text-decoration: none; /* Remove underline from button */
+    
+}
+
+.showBtn:hover {
+    border-bottom: 1px solid var(--color-heading);
+    color: var(--color-heading); /* Ensure hover color is consistent */
+}
+
+/* Specific show/hide button states */
+#moreNews, #morePubs, #moreTalks { /* Assuming these are spans or divs to be shown/hidden */
+    display: none; /* Initial state */
+}
+#moreNews li, #morePubs li, #moreTalks li { /* Style for list items within these toggled sections */
+    /* Inherits from .content-section ul li */
+}
+
+
+#lessNewsBtn, #lessPubsBtn, #lessTalksBtn {
+    display: none; /* Initially hidden */
+}
+
+/**************************************************/
+/* Research Section */
+/**************************************************/
+.research-proj {
+    margin-left: calc(var(--spacing-unit) * 3.75);
+    display: flex;
+    gap: calc(var(--spacing-unit) * 3.75);
+    margin-bottom: calc(var(--spacing-unit) * 2.5);
+    align-items: flex-start;
+}
+
+.research-thumb {
+    width: 180px;
+    flex-shrink: 0;
+}
+
+.research-thumb:hover {
+    border-bottom: none;
+}
+
+.research-thumb img,
+.research-thumb video {
+    width: 100%;
+    border-radius: 5px;
+    display: block;
+}
+.research-thumb video {
+  margin-top: 0.4em;
+  height: auto;
+}
+
+/* 新增或确认这个 div 的样式 */
+.research-proj-details {
+    flex-grow: 1;
+    /* display: flex; */
+    /* flex-direction: column; */
+}
+
+.research-proj-details .research-proj-title {
+    color: var(--color-heading);
+    font-size: 16px;
+    line-height: 1.6;
+    margin-top: 0;
+    margin-bottom: calc(var(--spacing-unit) * 0.5);
+}
+.research-proj-details .research-proj-title a {
+    color: inherit;
+    border-bottom: none;
+}
+.research-proj-details .research-proj-title a:hover {
+    border-bottom: 1px solid var(--color-heading);
+}
+
+.research-proj-details p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--color-text-secondary);
+    margin-bottom: 0;
+}
+
+.research-proj-details p strong {
+    color: var(--color-highlight);
+    font-weight: 700;
+}
+
+#morePubsBtn, #lessPubsBtn { /* If these buttons are within .research section */
+    margin-left: calc(var(--spacing-unit) * 3.75); /* 30px */
+}
+
+
+/**************************************************/
+/* Experience Section */
+/**************************************************/
+/* .experience { } */ /* General styles covered by .content-section */
+
+.experience-details {
+    margin-left: calc(var(--spacing-unit) * 3.75); /* 30px */
+    /* width: 100%; */
+    display: flex; /* Using flexbox */
+    gap: calc(var(--spacing-unit) * 3.75); /* 30px */
+    margin-bottom: calc(var(--spacing-unit) * 2.5); /* 20px */
+    align-items: flex-start; /* Align items to the top */
+}
+.experience-details:last-child {
+    margin-bottom: 0;
+}
+
+.experience-thumb {
+    width: 180px; /* Kept original width */
+    flex-shrink: 0;
+    /* margin-top: 5px; */ /* Flex align-items handles this */
+    /* padding-right: 30px; */ /* Replaced by gap */
+    /* margin-bottom: 20px; */ /* Handled by parent */
+    text-align: center; /* Center the image if it's narrower than container */
+}
+.experience-thumb:hover {
+    border-bottom: none;
+}
+.experience-thumb img {
+    /* margin-left: 30px; */ /* Removed, image should be centered or fill its container */
+    width: 65%; /* Kept from original */
+    max-width: 100px; /* Example: prevent logo from being too large */
+    border-radius: 5px;
+    display: block; /* Remove extra space */
+    margin: 0 auto; /* Center if width is less than 100% */
+}
+
+.experience-info {
+    /* margin-top: 15px; */ /* Handled by flex alignment or direct margin on children */
+    flex-grow: 1;
+}
+.experience-info h3 { /* Targeting the h3 containing the title */
+    margin-top: 0;
+    margin-bottom: calc(var(--spacing-unit) * 0.5);
+}
+
+.experience-info .experience-title { /* Styling the <a> tag inside h3 */
+    color: var(--color-heading);
+    font-size: 16px;
+    line-height: 1.6; /* 26px */
+    font-weight: bold; /* Make title stand out */
+}
+.experience-info .experience-title:hover {
+    border-bottom: 1px solid var(--color-heading);
+}
+.experience-info p {
+    color: var(--color-text-secondary);
+    margin-bottom: 0;
+}
+
+
+/**************************************************/
+/* Awards Section */
+/**************************************************/
+/* .awards {} */ /* General styles covered by .content-section */
+.awards ul {
+    /* Inherits from .content-section ul */
+}
+.awards ul li {
+    /* Inherits from .content-section ul li */
+}
+
+
+/**************************************************/
+/* Miscellaneous Section */
+/**************************************************/
+.miscellaneous {
+}
+
+.miscellaneous h2 {
+}
+
+.misc-content-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-left: calc(var(--spacing-unit) * 3.75);
+    /* margin-right: calc(var(--spacing-unit) * 3.75); */
+    margin-bottom: calc(var(--spacing-unit) * 2);
+    color: var(--color-text-subtle);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.misc-main-text {
+    width: 100%;
+    margin-bottom: calc(var(--spacing-unit) * 0.5);
+}
+
+.misc-update-text {
+    width: 100%;
+    text-align: right; 
+    white-space: nowrap;
+}
+
+.content-section.miscellaneous {
+    padding-bottom: calc(var(--spacing-unit) * 6);
+}
+
+/**************************************************/
+/* Removed .recent-work, .slider, .divider, h3 (global), #repBtn, #showAllBtn, .nonRep, .people, .student-profile styles as HTML was commented out or not present */
+/**************************************************/
+
+/* Clearfix for sections that might still contain floats if flex/grid is not fully adopted */
+/* Use sparingly if floats are still necessary. */
+.section::after {
+    content: "";
+    clear: both;
+    display: table;
+}
