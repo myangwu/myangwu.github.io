@@ -329,3 +329,13 @@ nav {
 .exp-wrapper .location {
   color: var(--light-gray);
 }
+
+.intern-item {
+  list-style: none;
+  padding-left: 1em;
+}
+
+.intern-role {
+  margin-left: 1em;
+  color: var(--dark-gray);
+}
