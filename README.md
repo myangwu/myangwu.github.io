@@ -1,3 +1,3 @@
 My personal website.
 
-Modified from © Pingchuan Ma
+Modified from © Haofan Wang
