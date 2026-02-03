@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="DESCRIPTION META TAG">
+  <meta property="og:title" content="ConsID-Gen" />
+  <meta property="og:description"
+    content="ConsID-Gen: View-Consistent and Identity-Preserving Image-to-Video Generation" />
+  <meta property="og:url" content="URL OF THE WEBSITE" />
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+
+  <meta name="twitter:title" content="ConsID-Gen">
+  <meta name="twitter:description"
+    content="ConsID-Gen: View-Consistent and Identity-Preserving Image-to-Video Generation">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>ConsID-Gen</title>
+  <link rel="icon" type="image/x-icon" href="">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+
+<body>
+  <div class="top-bar" aria-hidden="true"></div>
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-2 publication-title">
+              ConsID-Gen: <br>
+              View-Consistent and Identity-Preserving <br>
+              Image-to-Video Generation
+            </h1>
+            <div class="is-size-5 publication-authors authors-row">
+              <!-- Paper authors -->
+              <span class="author-block"><a href="https://mingyang.me/">Mingyang Wu</a><sup>1</sup></span>
+              <span class="author-block"><a href="https://scholar.google.com/citations?user=Cc_213MAAAAJ&hl=en">Ashirbad
+                  Mishra</a><sup>2</sup></span>
+              <span class="author-block"><a href="https://scholar.google.com/citations?user=nlZVZtMAAAAJ&hl=en">Soumik
+                  Dey</a><sup>2</sup></span>
+              <span class="author-block"><a href="https://shuoxing98.github.io/">Shuo Xing</a><sup>1</sup></span>
+              <span class="author-block"><a href="">Naveen Ravipati</a><sup>2</sup></span>
+              <span class="authors-break" aria-hidden="true"></span>
+              <span class="author-block"><a href="https://scholar.google.co.jp/citations?user=CucpbkEAAAAJ&hl=ja">Hansi
+                  Wu</a><sup>2</sup></span>
+              <span class="author-block"><a href="https://scholar.google.com/citations?user=1UlUOMMAAAAJ&hl=en">Binbin
+                  Li</a><sup>2</sup></span>
+              <span class="author-block"><a href="https://vztu.github.io/">Zhengzhong
+                  Tu</a><sup>1</sup><sup>†</sup></span>
+            </div>
+
+            <div class="is-size-5 publication-authors affiliations-row">
+              <span class="author-block"><sup>1</sup>Texas A&M University</span>
+              <span class="author-block"><sup>2</sup>eBay Inc.</span>
+            </div>
+
+            <div class="is-size-6 publication-authors">
+              <span class="author-block"><sup>†</sup>Corresponding Author</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- ArXiv abstract Link -->
+                <span class="link-block">
+                  <a href="" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+
+                <!-- Github link -->
+                <span class="link-block">
+                  <a href="" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <img src="static/images/hf.png" alt="Reward Model">
+                    </span>
+                    <span>Dataset</span>
+                  </a>
+                </span>
+              </div>
+              <div class="tldr-box">
+                <p><span class="tldr-label">TL;DR:</span> </p>
+              </div>
+              <div class="contrib-section">
+                <div class="contrib-text contrib-card">
+                  <h3>Our contribution</h3>
+                  <ol class="contrib-list">
+                    <li>A holistic I2V benchmark for identity preservation, with a diverse dataset and a novel
+                      multi-view evaluation suite.</li>
+                    <li>ConsID-Gen introduces unified representation before diffusion, with multi-view guidance and
+                      improved cross-modal alignment.</li>
+                    <li>Showing that ConsID-Gen outperforms open-source SOTAs in identity consistency and in human
+                      evaluation.</li>
+                  </ol>
+                </div>
+                <div class="contrib-media">
+                  <img class="contrib-figure" src="images/video_generation_paradigms.png"
+                    alt="Video generation paradigms">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="sec-bar" aria-hidden="true"></div>
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div id="sec:overview" class="column is-10">
+            <h2 class="title is-2 has-text-centered">Overview</h2>
+            <div class="content has-text-justified">
+              <p>
+                Image-to-Video (I2V) generation often struggles with maintaining fine-grained object identity and
+                geometric stability due to the sparsity of single-view observations. To address this, we approach the
+                problem from both data and model perspectives, introducing a comprehensive framework for
+                identity-preserving video generation.
+              </p>
+              <p>
+                We curate <strong>ConsIDVid</strong>, a large-scale object-centric dataset built with a scalable
+                pipeline for high-quality, temporally aligned videos. Alongside this, we establish
+                <strong>ConsIDVid-Bench</strong>, a novel benchmarking framework designed to evaluate multi-view
+                consistency using metrics sensitive to subtle geometric and appearance deviations.
+              </p>
+              <p>
+                We further propose <strong>ConsID-Gen</strong>, a view-assisted I2V generation framework. It augments
+                the first frame with unposed auxiliary views and fuses semantic and structural cues via a dual-stream
+                visual–geometric encoder and a text–visual connector. This unified conditioning for the Diffusion
+                Transformer backbone achieves superior identity fidelity and temporal coherence, consistently
+                outperforming leading models like Wan2.1 and HunyuanVideo.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero is-small method-wide">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div id="sec:method_overview" class="column is-10">
+            <div class="sec-bar sec-bar-short" aria-hidden="true"></div>
+            <h2 class="title is-2 has-text-centered">Method Overview</h2>
+            <div class="method-text">
+              <h3 class="method-subtitle">1. ConsID-Gen: Model Architecture</h3>
+            </div>
+            <div class="content has-text-justified">
+              <figure class="method-figure">
+                <img src="images/model_arch.jpg" alt="ConsID-Gen method overview">
+              </figure>
+              <div class="method-text">
+                <p>
+                  ConsID-Gen takes as input the first frame, two uncalibrated images, and a text instruction. Our
+                  Dual-Visual Encoder combines a Visual Encoder and a Geometry Encoder to extract visual-appearance and
+                  geometric representations. A unified multimodal interaction projector then fuses these features with
+                  the prompt to generate conditioning tokens for the DiT backbone.
+                </p>
+              </div>
+              <div class="method-text">
+                <h3 class="method-subtitle">2. ConsIDVid & ConsIDVid-Bench</h3>
+              </div>
+              <figure class="method-figure method-figure-pipeline">
+                <img src="images/data_curation_pipeline.png" alt="Data curation pipeline">
+              </figure>
+              <figure class="method-figure method-figure-pipeline">
+                <img src="images/data.png" alt="Data statistics and benchmark distribution">
+              </figure>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero is-small method-wide">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div id="sec:method_overview" class="column is-10">
+            <div class="sec-bar sec-bar-short" aria-hidden="true"></div>
+            <h2 class="title is-2 has-text-centered">Results</h2>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <div class="footer-bibtex">
+              <div class="footer-bibtex-label">BibTeX</div>
+              <pre><code></code></pre>
+            </div>
+            <p>
+              This page was built using the
+              <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic
+                Project Page Template</a> and
+              <a href="https://diffusion-tokenflow.github.io/" target="_blank">TokenFlow</a>.
+              You are free to borrow the of this website, we just ask that you link back to this page in the footer.
+              <br> This website is licensed under a
+              <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+                Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="is-centered" style="width: 150px; height: 150px; margin: 0 auto;">
+        <script type="text/javascript" id="clstr_globe"
+          src="//clustrmaps.com/globe.js?d=TGt_le9glxyqhCcgf0gz38diUiCt8lGCNnbePdgQ4z8"></script>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const videoWrappers = document.querySelectorAll('.video-wrapper');
+
+      videoWrappers.forEach((wrapper) => {
+        const defaultVideo = wrapper.querySelector('.default-video');
+        const hoverVideo = wrapper.querySelector('.hover-video');
+
+        if (!defaultVideo) return;
+
+        const setHeight = () => {
+          if (!defaultVideo.videoWidth || !defaultVideo.videoHeight) return;
+          const aspectRatio = defaultVideo.videoWidth / defaultVideo.videoHeight;
+          wrapper.style.height = `${wrapper.offsetWidth / aspectRatio}px`;
+        };
+
+        defaultVideo.addEventListener('loadedmetadata', setHeight);
+        window.addEventListener('resize', setHeight);
+        setHeight();
+
+        if (hoverVideo) {
+          wrapper.addEventListener('mouseenter', () => {
+            defaultVideo.pause();
+            hoverVideo.play();
+          });
+
+          wrapper.addEventListener('mouseleave', () => {
+            defaultVideo.play();
+            hoverVideo.pause();
+          });
+        }
+      });
+    });
+
+    $(document).ready(function () {
+      const carouselItems = $('.carousel .item');
+      const numItems = carouselItems.length;
+      const numVideos = 5;
+      let currentIndex = 0;
+
+      if (numItems === 0) return;
+
+      const setActive = () => {
+        carouselItems.removeClass('active');
+        carouselItems.slice(currentIndex, currentIndex + numVideos).addClass('active');
+      };
+
+      $('.carousel').on('click', function () {
+        currentIndex++;
+        if (currentIndex + numVideos > numItems) currentIndex = 0;
+        setActive();
+      });
+
+      setActive();
+    });
+  </script>
+  </div>
+  </section>
+</body>
+
+</html>
