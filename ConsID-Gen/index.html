@@ -34,18 +34,11 @@
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
   <link rel="stylesheet" href="static/css/bulma.min.css">
-  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
   <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="static/css/index.css">
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
   <script defer src="static/js/fontawesome.all.min.js"></script>
-  <script src="static/js/bulma-carousel.min.js"></script>
-  <script src="static/js/bulma-slider.min.js"></script>
-  <script src="static/js/index.js"></script>
 </head>
 
 <body>
@@ -224,22 +217,148 @@
         <div class="columns is-centered">
           <div id="sec:method_overview" class="column is-10">
             <div class="sec-bar sec-bar-short" aria-hidden="true"></div>
-            <h2 class="title is-2 has-text-centered">Results</h2>
+            <h2 class="title is-2 has-text-centered">Image-to-Video Comparison</h2>
             <div class="results-grid">
-              <video src="videos/1_left_Baseline_right_ConsID-Gen.mp4" controls muted loop playsinline></video>
-              <video src="videos/2_left_Baseline_right_ConsID-Gen.mp4" controls muted loop playsinline></video>
-              <video src="videos/3_left_Baseline_right_ConsID-Gen.mp4" controls muted loop playsinline></video>
-              <video src="videos/4_left_Baseline_right_ConsID-Gen.mp4" controls muted loop playsinline></video>
-              <video src="videos/5_left_Baseline_right_ConsID-Gen.mp4" controls muted loop playsinline></video>
-              <video src="videos/6_left_Baseline_right_ConsID-Gen.mp4" controls muted loop playsinline></video>
-              <video src="videos/7_left_Baseline_right_ConsID-Gen.mp4" controls muted loop playsinline></video>
-              <video src="videos/8_left_Baseline_right_ConsID-Gen.mp4" controls muted loop playsinline></video>
-              <video src="videos/9_left_Baseline_right_ConsID-Gen.mp4" controls muted loop playsinline></video>
-              <video src="videos/10_left_Baseline_right_ConsID-Gen.mp4" controls muted loop playsinline></video>
-              <video src="videos/11_left_Baseline_right_ConsID-Gen.mp4" controls muted loop playsinline></video>
-              <video src="videos/12_left_Baseline_right_ConsID-Gen.mp4" controls muted loop playsinline></video>
-              <video src="videos/13_left_Baseline_right_ConsID-Gen.mp4" controls muted loop playsinline></video>
-              <video src="videos/14_left_Baseline_right_ConsID-Gen.mp4" controls muted loop playsinline></video>
+              <div class="comparison-item square" style="--pair-ar: 1 / 1;">
+                <div class="comparison-header">
+                  <span>Baseline (WanVideo)</span>
+                  <span>ConsID-Gen</span>
+                </div>
+                <div class="comparison-pair">
+                  <video src="videos/1/WanVideo.mp4" controls muted loop playsinline></video>
+                  <video src="videos/1/ConsID-Gen.mp4" controls muted loop playsinline></video>
+                </div>
+              </div>
+              <div class="comparison-item landscape" style="--pair-ar: 16 / 9;">
+                <div class="comparison-header">
+                  <span>Baseline (WanVideo)</span>
+                  <span>ConsID-Gen</span>
+                </div>
+                <div class="comparison-pair">
+                  <video src="videos/2/WanVideo.mp4" controls muted loop playsinline></video>
+                  <video src="videos/2/ConsID-Gen.mp4" controls muted loop playsinline></video>
+                </div>
+              </div>
+              <div class="comparison-item landscape" style="--pair-ar: 464 / 368;">
+                <div class="comparison-header">
+                  <span>Baseline (WanVideo)</span>
+                  <span>ConsID-Gen</span>
+                </div>
+                <div class="comparison-pair">
+                  <video src="videos/3/WanVideo.mp4" controls muted loop playsinline></video>
+                  <video src="videos/3/ConsID-Gen.mp4" controls muted loop playsinline></video>
+                </div>
+              </div>
+              <div class="comparison-item portrait" style="--pair-ar: 464 / 720;">
+                <div class="comparison-header">
+                  <span>Baseline (WanVideo)</span>
+                  <span>ConsID-Gen</span>
+                </div>
+                <div class="comparison-pair">
+                  <video src="videos/4/WanVideo.mp4" controls muted loop playsinline></video>
+                  <video src="videos/4/ConsID-Gen.mp4" controls muted loop playsinline></video>
+                </div>
+              </div>
+              <div class="comparison-item landscape" style="--pair-ar: 16 / 9;">
+                <div class="comparison-header">
+                  <span>Baseline (WanVideo)</span>
+                  <span>ConsID-Gen</span>
+                </div>
+                <div class="comparison-pair">
+                  <video src="videos/5/WanVideo.mp4" controls muted loop playsinline></video>
+                  <video src="videos/5/ConsID-Gen.mp4" controls muted loop playsinline></video>
+                </div>
+              </div>
+              <div class="comparison-item square" style="--pair-ar: 1 / 1;">
+                <div class="comparison-header">
+                  <span>Baseline (WanVideo)</span>
+                  <span>ConsID-Gen</span>
+                </div>
+                <div class="comparison-pair">
+                  <video src="videos/6/WanVideo.mp4" controls muted loop playsinline></video>
+                  <video src="videos/6/ConsID-Gen.mp4" controls muted loop playsinline></video>
+                </div>
+              </div>
+              <div class="comparison-item landscape" style="--pair-ar: 16 / 9;">
+                <div class="comparison-header">
+                  <span>Baseline (WanVideo)</span>
+                  <span>ConsID-Gen</span>
+                </div>
+                <div class="comparison-pair">
+                  <video src="videos/7/WanVideo.mp4" controls muted loop playsinline></video>
+                  <video src="videos/7/ConsID-Gen.mp4" controls muted loop playsinline></video>
+                </div>
+              </div>
+              <div class="comparison-item portrait" style="--pair-ar: 416 / 720;">
+                <div class="comparison-header">
+                  <span>Baseline (WanVideo)</span>
+                  <span>ConsID-Gen</span>
+                </div>
+                <div class="comparison-pair">
+                  <video src="videos/8/WanVideo.mp4" controls muted loop playsinline></video>
+                  <video src="videos/8/ConsID-Gen.mp4" controls muted loop playsinline></video>
+                </div>
+              </div>
+              <div class="comparison-item landscape" style="--pair-ar: 16 / 9;">
+                <div class="comparison-header">
+                  <span>Baseline (WanVideo)</span>
+                  <span>ConsID-Gen</span>
+                </div>
+                <div class="comparison-pair">
+                  <video src="videos/9/WanVideo.mp4" controls muted loop playsinline></video>
+                  <video src="videos/9/ConsID-Gen.mp4" controls muted loop playsinline></video>
+                </div>
+              </div>
+              <div class="comparison-item portrait" style="--pair-ar: 416 / 720;">
+                <div class="comparison-header">
+                  <span>Baseline (WanVideo)</span>
+                  <span>ConsID-Gen</span>
+                </div>
+                <div class="comparison-pair">
+                  <video src="videos/10/WanVideo.mp4" controls muted loop playsinline></video>
+                  <video src="videos/10/ConsID-Gen.mp4" controls muted loop playsinline></video>
+                </div>
+              </div>
+              <div class="comparison-item square" style="--pair-ar: 1 / 1;">
+                <div class="comparison-header">
+                  <span>Baseline (WanVideo)</span>
+                  <span>ConsID-Gen</span>
+                </div>
+                <div class="comparison-pair">
+                  <video src="videos/11/WanVideo.mp4" controls muted loop playsinline></video>
+                  <video src="videos/11/ConsID-Gen.mp4" controls muted loop playsinline></video>
+                </div>
+              </div>
+              <div class="comparison-item landscape" style="--pair-ar: 16 / 9;">
+                <div class="comparison-header">
+                  <span>Baseline (WanVideo)</span>
+                  <span>ConsID-Gen</span>
+                </div>
+                <div class="comparison-pair">
+                  <video src="videos/12/WanVideo.mp4" controls muted loop playsinline></video>
+                  <video src="videos/12/ConsID-Gen.mp4" controls muted loop playsinline></video>
+                </div>
+              </div>
+              <div class="comparison-item portrait" style="--pair-ar: 480 / 832;">
+                <div class="comparison-header">
+                  <span>Baseline (WanVideo)</span>
+                  <span>ConsID-Gen</span>
+                </div>
+                <div class="comparison-pair">
+                  <video src="videos/13/WanVideo.mp4" controls muted loop playsinline></video>
+                  <video src="videos/13/ConsID-Gen.mp4" controls muted loop playsinline></video>
+                </div>
+              </div>
+              <div class="comparison-item landscape" style="--pair-ar: 16 / 9;">
+                <div class="comparison-header">
+                  <span>Baseline (WanVideo)</span>
+                  <span>ConsID-Gen</span>
+                </div>
+                <div class="comparison-pair">
+                  <video src="videos/14/WanVideo.mp4" controls muted loop playsinline></video>
+                  <video src="videos/14/ConsID-Gen.mp4" controls muted loop playsinline></video>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -276,58 +395,79 @@
 
   <script>
     window.addEventListener('DOMContentLoaded', () => {
-      const videoWrappers = document.querySelectorAll('.video-wrapper');
+      const comparisonItems = document.querySelectorAll('.comparison-item');
 
-      videoWrappers.forEach((wrapper) => {
-        const defaultVideo = wrapper.querySelector('.default-video');
-        const hoverVideo = wrapper.querySelector('.hover-video');
+      comparisonItems.forEach((item) => {
+        const videos = Array.from(item.querySelectorAll('video'));
+        if (videos.length < 2) return;
 
-        if (!defaultVideo) return;
+        let isSyncing = false;
+        let lastSyncAt = 0;
 
-        const setHeight = () => {
-          if (!defaultVideo.videoWidth || !defaultVideo.videoHeight) return;
-          const aspectRatio = defaultVideo.videoWidth / defaultVideo.videoHeight;
-          wrapper.style.height = `${wrapper.offsetWidth / aspectRatio}px`;
+        const syncPlay = (source) => {
+          if (isSyncing) return;
+          isSyncing = true;
+          videos.forEach((video) => {
+            if (video === source) return;
+            if (Math.abs(video.currentTime - source.currentTime) > 0.15) {
+              video.currentTime = source.currentTime;
+            }
+            if (video.paused) {
+              video.play().catch(() => {});
+            }
+          });
+          isSyncing = false;
         };
 
-        defaultVideo.addEventListener('loadedmetadata', setHeight);
-        window.addEventListener('resize', setHeight);
-        setHeight();
-
-        if (hoverVideo) {
-          wrapper.addEventListener('mouseenter', () => {
-            defaultVideo.pause();
-            hoverVideo.play();
+        const syncPause = (source) => {
+          if (isSyncing) return;
+          isSyncing = true;
+          videos.forEach((video) => {
+            if (video === source) return;
+            if (!video.paused) video.pause();
           });
+          isSyncing = false;
+        };
 
-          wrapper.addEventListener('mouseleave', () => {
-            defaultVideo.play();
-            hoverVideo.pause();
+        const syncSeek = (source) => {
+          if (isSyncing) return;
+          isSyncing = true;
+          videos.forEach((video) => {
+            if (video === source) return;
+            video.currentTime = source.currentTime;
           });
-        }
+          isSyncing = false;
+        };
+
+        videos.forEach((video) => {
+          video.addEventListener('play', () => syncPlay(video));
+          video.addEventListener('pause', () => syncPause(video));
+          video.addEventListener('seeking', () => syncSeek(video));
+          video.addEventListener('timeupdate', () => {
+            if (isSyncing) return;
+            const now = Date.now();
+            if (now - lastSyncAt < 200) return;
+            videos.forEach((peer) => {
+              if (peer === video) return;
+              if (Math.abs(peer.currentTime - video.currentTime) > 0.2) {
+                isSyncing = true;
+                peer.currentTime = video.currentTime;
+                isSyncing = false;
+                lastSyncAt = now;
+              }
+            });
+          });
+          video.addEventListener('ratechange', () => {
+            if (isSyncing) return;
+            isSyncing = true;
+            videos.forEach((peer) => {
+              if (peer === video) return;
+              peer.playbackRate = video.playbackRate;
+            });
+            isSyncing = false;
+          });
+        });
       });
-    });
-
-    $(document).ready(function () {
-      const carouselItems = $('.carousel .item');
-      const numItems = carouselItems.length;
-      const numVideos = 5;
-      let currentIndex = 0;
-
-      if (numItems === 0) return;
-
-      const setActive = () => {
-        carouselItems.removeClass('active');
-        carouselItems.slice(currentIndex, currentIndex + numVideos).addClass('active');
-      };
-
-      $('.carousel').on('click', function () {
-        currentIndex++;
-        if (currentIndex + numVideos > numItems) currentIndex = 0;
-        setActive();
-      });
-
-      setActive();
     });
   </script>
   </div>
