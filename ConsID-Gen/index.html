@@ -375,7 +375,20 @@
           <div class="content">
             <div class="footer-bibtex">
               <div class="footer-bibtex-label">BibTeX</div>
-              <pre><code></code></pre>
+              <div class="footer-bibtex-code-wrap">
+                <button class="footer-bibtex-copy" type="button" data-copy-target="bibtex-code">Copy</button>
+                <pre>
+<code id="bibtex-code">@misc{wu2026considgenviewconsistentidentitypreservingimagetovideo,
+  title={ConsID-Gen: View-Consistent and Identity-Preserving Image-to-Video Generation}, 
+  author={Mingyang Wu and Ashirbad Mishra and Soumik Dey and Shuo Xing and Naveen Ravipati and Hansi Wu and Binbin Li and Zhengzhong Tu},
+  year={2026},
+  eprint={2602.10113},
+  archivePrefix={arXiv},
+  primaryClass={cs.CV},
+  url={https://arxiv.org/abs/2602.10113},
+}</code>
+                </pre>
+              </div>
             </div>
             <p>
               This page was built using the
@@ -467,6 +480,46 @@
             isSyncing = false;
           });
         });
+      });
+
+      const copyButton = document.querySelector('.footer-bibtex-copy');
+      if (!copyButton) return;
+
+      const copyText = async (text) => {
+        if (navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(text);
+          return;
+        }
+
+        const helper = document.createElement('textarea');
+        helper.value = text;
+        helper.setAttribute('readonly', '');
+        helper.style.position = 'absolute';
+        helper.style.left = '-9999px';
+        document.body.appendChild(helper);
+        helper.select();
+        document.execCommand('copy');
+        helper.remove();
+      };
+
+      const setCopyState = (label, isDone) => {
+        copyButton.textContent = label;
+        copyButton.classList.toggle('is-done', isDone);
+      };
+
+      copyButton.addEventListener('click', async () => {
+        const targetId = copyButton.getAttribute('data-copy-target');
+        const codeBlock = targetId ? document.getElementById(targetId) : null;
+        if (!codeBlock) return;
+
+        try {
+          await copyText(codeBlock.innerText.trim());
+          setCopyState('Copied!', true);
+          setTimeout(() => setCopyState('Copy', false), 1500);
+        } catch (_error) {
+          setCopyState('Failed', false);
+          setTimeout(() => setCopyState('Copy', false), 1500);
+        }
       });
     });
   </script>
