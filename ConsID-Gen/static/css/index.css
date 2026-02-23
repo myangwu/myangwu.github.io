@@ -1,7 +1,15 @@
+:root {
+  --font-body: 'Crimson Text', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+  --font-heading: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --text-primary: #000000;
+  --author-blue: #1367a7;
+  --author-blue-hover: #208799;
+}
+
 body {
-  font-family: 'Charter', 'Bitstream Charter', 'Georgia', serif;
+  font-family: var(--font-body);
   background-color: #ffffff;
-  color: #1a1a1a;
+  color: var(--text-primary);
   line-height: 1.75;
   font-size: 18px;
 }
@@ -17,9 +25,59 @@ body {
 }
 
 .top-bar {
-  height: 56px;
+  position: sticky;
+  top: 0;
+  z-index: 40;
   background-color: #ffffff;
   border-bottom: 1px solid #e6e6e6;
+}
+
+.top-bar-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 56px;
+  padding: 10px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.top-brand {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1f1f1f;
+  white-space: nowrap;
+}
+
+.top-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 6px 14px;
+}
+
+.top-links a {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #555;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+.top-links a:hover {
+  color: var(--author-blue);
+  border-bottom-color: var(--author-blue);
+}
+
+#sec-top,
+#sec-overview,
+#sec-method,
+#sec-comparison,
+#sec-bibtex {
+  scroll-margin-top: 82px;
 }
 
 .sec-bar {
@@ -153,6 +211,16 @@ body {
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
 }
 
+.acceptance-note {
+  margin: 16px auto 10px auto;
+  font-family: var(--font-body);
+  font-size: clamp(1.7rem, 3vw, 2.8rem);
+  font-weight: 500;
+  line-height: 1.15;
+  color: #3f3f3f;
+  text-align: center;
+}
+
 .tldr-box {
   max-width: 900px;
   margin: 18px auto 0 auto;
@@ -167,6 +235,7 @@ body {
   font-size: 1rem;
   line-height: 1.7;
   color: #444;
+  font-family: var(--font-body);
 }
 
 .tldr-box .tldr-label {
@@ -205,6 +274,7 @@ body {
   color: #444;
   line-height: 1.62;
   font-size: 1rem;
+  font-family: var(--font-body);
 }
 
 .contrib-list li {
@@ -314,8 +384,9 @@ body {
 .comparison-header {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  font-size: 0.8rem;
-  font-weight: 600;
+  font-size: clamp(1.05rem, 1.1vw, 1.3rem);
+  font-weight: 700;
+  line-height: 1.25;
   color: #2d2d2d;
   text-align: center;
   letter-spacing: 0.01em;
@@ -370,6 +441,34 @@ body {
 }
 
 @media (max-width: 720px) {
+  .top-bar-inner {
+    padding: 8px 12px;
+    min-height: 52px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .top-brand {
+    font-size: 0.92rem;
+  }
+
+  .top-links {
+    width: 100%;
+    justify-content: flex-start;
+    gap: 4px 10px;
+  }
+
+  .top-links a {
+    font-size: 0.88rem;
+  }
+
+  .acceptance-note {
+    margin-top: 12px;
+    margin-bottom: 8px;
+    font-size: 1.5rem;
+  }
+
   .comparison-item {
     padding: 10px;
   }
@@ -381,6 +480,7 @@ body {
   .comparison-header {
     grid-template-columns: 1fr;
     gap: 4px;
+    font-size: 1.02rem;
   }
 }
 
@@ -426,7 +526,7 @@ body {
 }
 
 .teaser {
-  font-family: 'Google Sans', sans-serif;
+  font-family: var(--font-heading);
 }
 
 
@@ -452,15 +552,25 @@ body {
 }
 
 .publication-title {
-    font-family: 'Charter', 'Bitstream Charter', 'Georgia', serif;
+    font-family: var(--font-heading);
     font-weight: 600;
     letter-spacing: 0.2px;
+    color: var(--text-primary);
+}
+
+.publication-title .project-name {
+    display: inline-block;
+    font-size: 1.34em;
+    font-style: italic;
+    font-weight: 700;
+    line-height: 1.05;
+    margin-bottom: 0.06em;
 }
 
 .publication-authors {
-    font-family: 'Charter', 'Bitstream Charter', 'Georgia', serif;
+    font-family: var(--font-body);
     font-size: 1.05rem;
-    color: #8a8a8a;
+    color: var(--text-primary);
 }
 
 .publication-venue {
@@ -478,12 +588,18 @@ body {
 .publication-authors {
 }
 
-.publication-authors a {
-   color: #2563eb !important;
-   font-weight: 500;
+.authors-row {
+  color: var(--author-blue);
 }
 
-.publication-authors a:hover {
+.authors-row a {
+   color: var(--author-blue) !important;
+   font-weight: 600;
+   font-family: var(--font-body);
+}
+
+.authors-row a:hover {
+    color: var(--author-blue-hover) !important;
     text-decoration: underline;
 }
 
@@ -523,7 +639,7 @@ body {
 }
 
 .affiliations-row .author-block {
-  color: #8a8a8a;
+  color: var(--text-primary);
 }
 
 /* .author-block a {
@@ -561,7 +677,20 @@ body {
 
 
 .content.has-text-justified {
+  font-family: var(--font-body);
   font-size: 18px;
+}
+
+.content.has-text-justified p,
+.content.has-text-justified li {
+  font-family: var(--font-body);
+}
+
+#sec-overview .content.has-text-justified strong {
+  font-weight: 700;
+  font-size: 1.05em;
+  color: #000000;
+  letter-spacing: 0.01em;
 }
 
 iframe {

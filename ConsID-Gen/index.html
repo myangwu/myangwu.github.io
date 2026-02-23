@@ -31,7 +31,9 @@
 
   <title>ConsID-Gen</title>
   <link rel="icon" type="image/x-icon" href="">
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,400;0,600;1,400&display=swap"
+    rel="stylesheet">
 
   <link rel="stylesheet" href="static/css/bulma.min.css">
   <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
@@ -42,14 +44,25 @@
 </head>
 
 <body>
-  <div class="top-bar" aria-hidden="true"></div>
-  <section class="hero">
+  <header class="top-bar">
+    <div class="top-bar-inner">
+      <div class="top-brand">[CVPR 2026] ConsID-Gen · Texas A&amp;M x eBay</div>
+      <nav class="top-links" aria-label="Section navigation">
+        <a href="#sec-top">Top</a>
+        <a href="#sec-overview">Overview</a>
+        <a href="#sec-method">Method</a>
+        <a href="#sec-comparison">Comparison</a>
+        <a href="#sec-bibtex">BibTeX</a>
+      </nav>
+    </div>
+  </header>
+  <section id="sec-top" class="hero">
     <div class="hero-body">
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
             <h1 class="title is-2 publication-title">
-              ConsID-Gen: <br>
+              <span class="project-name">ConsID-Gen</span> <br>
               View-Consistent and Identity-Preserving <br>
               Image-to-Video Generation
             </h1>
@@ -79,6 +92,8 @@
             <div class="is-size-6 publication-authors">
               <span class="author-block"><sup>†</sup>Corresponding Author</span>
             </div>
+
+            <div class="acceptance-note">Accepted by CVPR 2026</div>
 
             <div class="column has-text-centered">
               <div class="publication-links">
@@ -140,11 +155,11 @@
   </section>
 
   <div class="sec-bar" aria-hidden="true"></div>
-  <section class="hero is-small">
+  <section id="sec-overview" class="hero is-small">
     <div class="hero-body">
       <div class="container is-max-desktop">
         <div class="columns is-centered">
-          <div id="sec:overview" class="column is-10">
+          <div class="column is-10">
             <h2 class="title is-2 has-text-centered">Overview</h2>
             <div class="content has-text-justified">
               <p>
@@ -152,14 +167,10 @@
                 geometric stability due to the sparsity of single-view observations. To address this, we approach the
                 problem from both data and model perspectives, introducing a comprehensive framework for
                 identity-preserving video generation.
-              </p>
-              <p>
                 We curate <strong>ConsIDVid</strong>, a large-scale object-centric dataset built with a scalable
                 pipeline for high-quality, temporally aligned videos. Alongside this, we establish
                 <strong>ConsIDVid-Bench</strong>, a novel benchmarking framework designed to evaluate multi-view
                 consistency using metrics sensitive to subtle geometric and appearance deviations.
-              </p>
-              <p>
                 We further propose <strong>ConsID-Gen</strong>, a view-assisted I2V generation framework. It augments
                 the first frame with unposed auxiliary views and fuses semantic and structural cues via a dual-stream
                 visual–geometric encoder and a text–visual connector. This unified conditioning for the Diffusion
@@ -173,11 +184,11 @@
     </div>
   </section>
 
-  <section class="hero is-small method-wide">
+  <section id="sec-method" class="hero is-small method-wide">
     <div class="hero-body">
       <div class="container is-max-desktop">
         <div class="columns is-centered">
-          <div id="sec:method_overview" class="column is-10">
+          <div class="column is-10">
             <div class="sec-bar sec-bar-short" aria-hidden="true"></div>
             <h2 class="title is-2 has-text-centered">Method Overview</h2>
             <div class="method-text">
@@ -211,17 +222,17 @@
     </div>
   </section>
 
-  <section class="hero is-small method-wide">
+  <section id="sec-comparison" class="hero is-small method-wide">
     <div class="hero-body">
       <div class="container is-max-desktop">
         <div class="columns is-centered">
-          <div id="sec:method_overview" class="column is-10">
+          <div class="column is-10">
             <div class="sec-bar sec-bar-short" aria-hidden="true"></div>
             <h2 class="title is-2 has-text-centered">Image-to-Video Comparison</h2>
             <div class="results-grid">
               <div class="comparison-item square" style="--pair-ar: 1 / 1;">
                 <div class="comparison-header">
-                  <span>Baseline (WanVideo)</span>
+                  <span>Baseline (Wan2.1-I2V)</span>
                   <span>ConsID-Gen</span>
                 </div>
                 <div class="comparison-pair">
@@ -231,7 +242,7 @@
               </div>
               <div class="comparison-item landscape" style="--pair-ar: 16 / 9;">
                 <div class="comparison-header">
-                  <span>Baseline (WanVideo)</span>
+                  <span>Baseline (Wan2.1-I2V)</span>
                   <span>ConsID-Gen</span>
                 </div>
                 <div class="comparison-pair">
@@ -241,7 +252,7 @@
               </div>
               <div class="comparison-item landscape" style="--pair-ar: 464 / 368;">
                 <div class="comparison-header">
-                  <span>Baseline (WanVideo)</span>
+                  <span>Baseline (Wan2.1-I2V)</span>
                   <span>ConsID-Gen</span>
                 </div>
                 <div class="comparison-pair">
@@ -251,7 +262,7 @@
               </div>
               <div class="comparison-item portrait" style="--pair-ar: 464 / 720;">
                 <div class="comparison-header">
-                  <span>Baseline (WanVideo)</span>
+                  <span>Baseline (Wan2.1-I2V)</span>
                   <span>ConsID-Gen</span>
                 </div>
                 <div class="comparison-pair">
@@ -261,7 +272,7 @@
               </div>
               <div class="comparison-item landscape" style="--pair-ar: 16 / 9;">
                 <div class="comparison-header">
-                  <span>Baseline (WanVideo)</span>
+                  <span>Baseline (Wan2.1-I2V)</span>
                   <span>ConsID-Gen</span>
                 </div>
                 <div class="comparison-pair">
@@ -271,7 +282,7 @@
               </div>
               <div class="comparison-item square" style="--pair-ar: 1 / 1;">
                 <div class="comparison-header">
-                  <span>Baseline (WanVideo)</span>
+                  <span>Baseline (Wan2.1-I2V)</span>
                   <span>ConsID-Gen</span>
                 </div>
                 <div class="comparison-pair">
@@ -281,7 +292,7 @@
               </div>
               <div class="comparison-item landscape" style="--pair-ar: 16 / 9;">
                 <div class="comparison-header">
-                  <span>Baseline (WanVideo)</span>
+                  <span>Baseline (Wan2.1-I2V)</span>
                   <span>ConsID-Gen</span>
                 </div>
                 <div class="comparison-pair">
@@ -291,7 +302,7 @@
               </div>
               <div class="comparison-item portrait" style="--pair-ar: 416 / 720;">
                 <div class="comparison-header">
-                  <span>Baseline (WanVideo)</span>
+                  <span>Baseline (Wan2.1-I2V)</span>
                   <span>ConsID-Gen</span>
                 </div>
                 <div class="comparison-pair">
@@ -301,7 +312,7 @@
               </div>
               <div class="comparison-item landscape" style="--pair-ar: 16 / 9;">
                 <div class="comparison-header">
-                  <span>Baseline (WanVideo)</span>
+                  <span>Baseline (Wan2.1-I2V)</span>
                   <span>ConsID-Gen</span>
                 </div>
                 <div class="comparison-pair">
@@ -311,7 +322,7 @@
               </div>
               <div class="comparison-item portrait" style="--pair-ar: 416 / 720;">
                 <div class="comparison-header">
-                  <span>Baseline (WanVideo)</span>
+                  <span>Baseline (Wan2.1-I2V)</span>
                   <span>ConsID-Gen</span>
                 </div>
                 <div class="comparison-pair">
@@ -321,7 +332,7 @@
               </div>
               <div class="comparison-item square" style="--pair-ar: 1 / 1;">
                 <div class="comparison-header">
-                  <span>Baseline (WanVideo)</span>
+                  <span>Baseline (Wan2.1-I2V)</span>
                   <span>ConsID-Gen</span>
                 </div>
                 <div class="comparison-pair">
@@ -331,7 +342,7 @@
               </div>
               <div class="comparison-item landscape" style="--pair-ar: 16 / 9;">
                 <div class="comparison-header">
-                  <span>Baseline (WanVideo)</span>
+                  <span>Baseline (Wan2.1-I2V)</span>
                   <span>ConsID-Gen</span>
                 </div>
                 <div class="comparison-pair">
@@ -341,7 +352,7 @@
               </div>
               <div class="comparison-item portrait" style="--pair-ar: 480 / 832;">
                 <div class="comparison-header">
-                  <span>Baseline (WanVideo)</span>
+                  <span>Baseline (Wan2.1-I2V)</span>
                   <span>ConsID-Gen</span>
                 </div>
                 <div class="comparison-pair">
@@ -351,7 +362,7 @@
               </div>
               <div class="comparison-item landscape" style="--pair-ar: 16 / 9;">
                 <div class="comparison-header">
-                  <span>Baseline (WanVideo)</span>
+                  <span>Baseline (Wan2.1-I2V)</span>
                   <span>ConsID-Gen</span>
                 </div>
                 <div class="comparison-pair">
@@ -368,7 +379,7 @@
 
 
 
-  <footer class="footer">
+  <footer id="sec-bibtex" class="footer">
     <div class="container">
       <div class="columns is-centered">
         <div class="column is-8">

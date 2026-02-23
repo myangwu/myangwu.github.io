@@ -12,7 +12,7 @@
 
 body {
   font-family: var(--serif-font);
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.8em;
   color: black;
   font-weight: 300;
@@ -49,7 +49,7 @@ a:hover {
 
 .section-title {
   font-family: var(--serif-font);
-  font-size: 20px;
+  font-size: 22px;
   font-weight: var(--serif-weight);
   padding-bottom: 10px;
 }
@@ -109,7 +109,7 @@ nav {
 }
 
 .navbar-toggler {
-  font-size: 14px;
+  font-size: 15px;
   padding: 1px 6px;
 }
 
@@ -120,7 +120,7 @@ nav {
 }
 
 .navbar .dropdown-menu {
-  font-size: 14px;
+  font-size: 15px;
 }
 
 @media (max-width: 575.98px) {
@@ -160,7 +160,7 @@ nav {
 }
 
 .home-wrapper .description .name {
-  font-size: 32px;
+  font-size: 34px;
   font-weight: var(--serif-weight);
   font-family: var(--serif-font);
   margin-bottom: 12px;
@@ -210,7 +210,7 @@ nav {
 }
 
 .home-wrapper .interests .section-title {
-  font-size: 14px;
+  font-size: 15px;
   padding-bottom: 4px;
 }
 
@@ -228,7 +228,7 @@ nav {
   color: black;
   font-weight: var(--serif-weight);
   font-family: var(--serif-font);
-  font-size: 16px;
+  font-size: 17px;
 }
 
 .pub-wrapper .title a:hover {
@@ -278,7 +278,7 @@ nav {
  *------------------*/
 
 .exp-wrapper .title a {
-  font-size: 16px;
+  font-size: 17px;
   font-weight: var(--serif-weight);
   font-family: var(--serif-font);
 }
@@ -343,7 +343,7 @@ nav {
 }
 
 .exp-wrapper time {
-  font-size: 14px;
+  font-size: 15px;
 }
 
 @media (min-width: 768px) {
@@ -390,7 +390,7 @@ nav {
   }
 
   .section-title {
-    font-size: 19px;
+    font-size: 20px;
     padding-bottom: 8px;
   }
 
@@ -433,12 +433,12 @@ nav {
   }
 
   .home-wrapper .description .name {
-    font-size: 30px;
+    font-size: 32px;
     margin-bottom: 8px;
   }
 
   .home-wrapper .description .email-line {
-    font-size: 15px;
+    font-size: 16px;
   }
 
   .home-wrapper .interests {
@@ -462,7 +462,7 @@ nav {
   }
 
   .pub-wrapper .title a {
-    font-size: 15px;
+    font-size: 16px;
     line-height: 1.45;
   }
 
