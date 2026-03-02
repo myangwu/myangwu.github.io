@@ -230,6 +230,22 @@ body {
   border-left: 4px solid #2563eb;
 }
 
+.hero-overview-video {
+  max-width: 760px;
+  margin: 18px auto 0 auto;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #ececec;
+  background: #000000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.hero-overview-video-player {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .tldr-box p {
   margin: 0;
   font-size: 1rem;
