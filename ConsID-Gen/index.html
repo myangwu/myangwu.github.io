@@ -1,399 +1,387 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConsID-Gen: View-Consistent and Identity-Preserving Image-to-Video Generation</title>
+    <meta name="description"
+        content="ConsID-Gen: View-Consistent and Identity-Preserving Image-to-Video Generation">
 
-  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
-  <!-- Replace the content tag with appropriate information -->
-  <meta name="description" content="DESCRIPTION META TAG">
-  <meta property="og:title" content="ConsID-Gen" />
-  <meta property="og:description"
-    content="ConsID-Gen: View-Consistent and Identity-Preserving Image-to-Video Generation" />
-  <meta property="og:url" content="URL OF THE WEBSITE" />
-  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
-  <meta property="og:image" content="" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="ConsID-Gen: View-Consistent and Identity-Preserving Image-to-Video Generation">
+    <meta property="og:description"
+        content="ConsID-Gen: View-Consistent and Identity-Preserving Image-to-Video Generation">
 
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ConsID-Gen">
+    <meta name="twitter:description"
+        content="ConsID-Gen: View-Consistent and Identity-Preserving Image-to-Video Generation">
 
-  <meta name="twitter:title" content="ConsID-Gen">
-  <meta name="twitter:description"
-    content="ConsID-Gen: View-Consistent and Identity-Preserving Image-to-Video Generation">
-  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
-  <meta name="twitter:image" content="">
-  <meta name="twitter:card" content="summary_large_image">
-  <!-- Keywords for your paper to be indexed by-->
-  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
-  <title>ConsID-Gen</title>
-  <link rel="icon" type="image/x-icon" href="">
-  <link
-    href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,400;0,600;1,400&display=swap"
-    rel="stylesheet">
+    <!-- Fonts and Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/wanteddev/wanted-sans@v1.0.1/packages/wanted-sans/fonts/webfonts/variable/split/WantedSansVariable.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 
-  <link rel="stylesheet" href="static/css/bulma.min.css">
-  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="static/css/index.css">
-
-  <script defer src="static/js/fontawesome.all.min.js"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <header class="top-bar">
-    <div class="top-bar-inner">
-      <div class="top-brand">[CVPR 2026] ConsID-Gen · Texas A&amp;M x eBay</div>
-      <nav class="top-links" aria-label="Section navigation">
-        <a href="#sec-top">Top</a>
-        <a href="#sec-overview">Overview</a>
-        <a href="#sec-method">Method</a>
-        <a href="#sec-comparison">Comparison</a>
-        <a href="#sec-bibtex">BibTeX</a>
-      </nav>
+
+    <!-- Top Navigation Bar -->
+    <header class="top-bar">
+        <div class="top-bar-inner">
+            <div class="top-brand">[CVPR 2026] ConsID-Gen · Texas A&amp;M x eBay</div>
+            <nav class="top-links" aria-label="Section navigation">
+                <a href="#tldr">Top</a>
+                <a href="#overview">Overview</a>
+                <a href="#method">Method</a>
+                <a href="#comparison">Comparison</a>
+                <a href="#citation">BibTeX</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Sidebar Navigation -->
+    <div class="sidebar">
+        <a href="#tldr" class="sidebar-item">
+            <div class="sidebar-dot"></div>
+            <span class="sidebar-label">TL;DR</span>
+        </a>
+        <a href="#overview" class="sidebar-item">
+            <div class="sidebar-dot"></div>
+            <span class="sidebar-label">Overview</span>
+        </a>
+        <a href="#method" class="sidebar-item">
+            <div class="sidebar-dot"></div>
+            <span class="sidebar-label">Method</span>
+        </a>
+        <a href="#comparison" class="sidebar-item">
+            <div class="sidebar-dot"></div>
+            <span class="sidebar-label">Comparison</span>
+        </a>
+        <a href="#citation" class="sidebar-item">
+            <div class="sidebar-dot"></div>
+            <span class="sidebar-label">Citation</span>
+        </a>
     </div>
-  </header>
-  <section id="sec-top" class="hero">
-    <div class="hero-body">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered">
-          <div class="column has-text-centered">
-            <h1 class="title is-2 publication-title">
-              <span class="project-name">ConsID-Gen</span> <br>
-              View-Consistent and Identity-Preserving <br>
-              Image-to-Video Generation
+
+    <!-- Hero Section -->
+    <section id="tldr" class="hero-section">
+        <div class="hero-container">
+            <h1 class="publication-title">
+                <span class="project-name">ConsID-Gen</span><br>
+                View-Consistent and Identity-Preserving<br>
+                Image-to-Video Generation
             </h1>
-            <div class="is-size-5 publication-authors authors-row">
-              <!-- Paper authors -->
-              <span class="author-block"><a href="https://mingyang.me/">Mingyang Wu</a><sup>1</sup></span>
-              <span class="author-block"><a href="https://scholar.google.com/citations?user=Cc_213MAAAAJ&hl=en">Ashirbad
-                  Mishra</a><sup>2</sup></span>
-              <span class="author-block"><a href="https://scholar.google.com/citations?user=nlZVZtMAAAAJ&hl=en">Soumik
-                  Dey</a><sup>2</sup></span>
-              <span class="author-block"><a href="https://shuoxing98.github.io/">Shuo Xing</a><sup>1</sup></span>
-              <span class="author-block"><a href="https://www.linkedin.com/in/naveen-ravipati-97983216a/">Naveen Ravipati</a><sup>2</sup></span>
-              <span class="authors-break" aria-hidden="true"></span>
-              <span class="author-block"><a href="https://scholar.google.co.jp/citations?user=CucpbkEAAAAJ&hl=ja">Hansi
-                  Wu</a><sup>2</sup></span>
-              <span class="author-block"><a href="https://scholar.google.com/citations?user=1UlUOMMAAAAJ&hl=en">Binbin
-                  Li</a><sup>2</sup></span>
-              <span class="author-block"><a href="https://vztu.github.io/">Zhengzhong
-                  Tu</a><sup>1</sup><sup>†</sup></span>
+
+            <!-- Authors -->
+            <div class="hero-authors authors-row">
+                <span class="author-block"><a href="https://mingyang.me/" target="_blank" rel="noopener noreferrer">Mingyang Wu</a><sup>1</sup></span>
+                <span class="author-block"><a href="https://scholar.google.com/citations?user=Cc_213MAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Ashirbad Mishra</a><sup>2</sup></span>
+                <span class="author-block"><a href="https://scholar.google.com/citations?user=nlZVZtMAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Soumik Dey</a><sup>2</sup></span>
+                <span class="author-block"><a href="https://shuoxing98.github.io/" target="_blank" rel="noopener noreferrer">Shuo Xing</a><sup>1</sup></span>
+                <span class="author-block"><a href="https://www.linkedin.com/in/naveen-ravipati-97983216a/" target="_blank" rel="noopener noreferrer">Naveen Ravipati</a><sup>2</sup></span>
+                <span class="authors-break" aria-hidden="true"></span>
+                <span class="author-block"><a href="https://scholar.google.co.jp/citations?user=CucpbkEAAAAJ&hl=ja" target="_blank" rel="noopener noreferrer">Hansi Wu</a><sup>2</sup></span>
+                <span class="author-block"><a href="https://scholar.google.com/citations?user=1UlUOMMAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Binbin Li</a><sup>2</sup></span>
+                <span class="author-block"><a href="https://vztu.github.io/" target="_blank" rel="noopener noreferrer">Zhengzhong Tu</a><sup>1</sup><sup>&dagger;</sup></span>
             </div>
 
-            <div class="is-size-5 publication-authors affiliations-row">
-              <span class="author-block"><sup>1</sup>Texas A&M University</span>
-              <span class="author-block"><sup>2</sup>eBay Inc.</span>
+            <div class="hero-affiliations">
+                <span><sup>1</sup>Texas A&M University</span>
+                <span><sup>2</sup>eBay Inc.</span>
             </div>
 
-            <div class="is-size-6 publication-authors">
-              <span class="author-block"><sup>†</sup>Corresponding Author</span>
+            <div class="hero-notes">
+                <span><sup>&dagger;</sup>Corresponding Author</span>
             </div>
 
             <div class="acceptance-note">Accepted by CVPR 2026</div>
 
-            <div class="column has-text-centered">
-              <div class="publication-links">
-                <!-- ArXiv abstract Link -->
-                <span class="link-block">
-                  <a href="https://arxiv.org/abs/2602.10113" target="_blank" class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="ai ai-arxiv"></i>
-                    </span>
-                    <span>arXiv</span>
-                  </a>
-                </span>
-
-                <!-- Github link -->
-                <span class="link-block">
-                  <a href="https://github.com/taco-group/ConsID-Gen" target="_blank" class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fab fa-github"></i>
-                    </span>
-                    <span>Code (Coming Soon)</span>
-                  </a>
-                </span>
-                <span class="link-block">
-                  <a href="https://huggingface.co/datasets/mingyang-wu/ConsIDVid" target="_blank" class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <img src="static/images/hf.png" alt="Reward Model">
-                    </span>
-                    <span>Dataset (Coming Soon)</span>
-                  </a>
-                </span>
-              </div>
-              <div class="hero-overview-video">
-                <video class="hero-overview-video-player" src="videos/ConsID-Gen_with_new_audio_compressed.mp4"
-                  controls playsinline preload="metadata"></video>
-              </div>
-              <div class="tldr-box">
-                <p><span class="tldr-label">TL;DR: We propose ConsID-Gen, a view-assisted I2V framework that tackles
-                    appearance drift via multi-view geometric priors and unified representation, alongside ConsIDVid,
-                    a new benchmark and evaluation suite dedicated to evaluating identity preservation.</span> </p>
-              </div>
-              <div class="contrib-section">
-                <div class="contrib-text contrib-card">
-                  <h3>Our contribution</h3>
-                  <ol class="contrib-list">
-                    <li>A holistic I2V benchmark for identity preservation, with a diverse dataset and a novel
-                      multi-view evaluation suite.</li>
-                    <li>ConsID-Gen introduces unified representation before diffusion, with multi-view guidance and
-                      improved cross-modal alignment.</li>
-                    <li>Showing that ConsID-Gen outperforms open-source SOTAs in identity consistency and in human
-                      evaluation.</li>
-                  </ol>
-                </div>
-                <div class="contrib-media">
-                  <img class="contrib-figure" src="images/video_generation_paradigms.png"
-                    alt="Video generation paradigms">
-                </div>
-              </div>
+            <!-- Link Buttons -->
+            <div class="hero-buttons">
+                <a href="https://arxiv.org/abs/2602.10113" class="btn" target="_blank" rel="noopener noreferrer">
+                    <i class="ai ai-arxiv"></i> arXiv
+                </a>
+                <a href="https://github.com/taco-group/ConsID-Gen" class="btn btn-outline" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-brands fa-github"></i> Code (Coming Soon)
+                </a>
+                <a href="https://huggingface.co/datasets/mingyang-wu/ConsIDVid" class="btn btn-outline" target="_blank" rel="noopener noreferrer">
+                    <img src="static/images/hf.png" alt="HuggingFace" class="icon-img"> Dataset (Coming Soon)
+                </a>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
-  </section>
 
-  <div class="sec-bar" aria-hidden="true"></div>
-  <section id="sec-overview" class="hero is-small">
-    <div class="hero-body">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered">
-          <div class="column is-10">
-            <h2 class="title is-2 has-text-centered">Overview</h2>
-            <div class="content has-text-justified">
-              <p>
+        <!-- Hero Video -->
+        <div class="teaser-container">
+            <div class="hero-video-container">
+                <video src="videos/ConsID-Gen_with_new_audio_compressed.mp4" controls playsinline preload="metadata"></video>
+            </div>
+        </div>
+
+        <!-- TL;DR Box -->
+        <div class="teaser-container" style="margin-top: 2rem;">
+            <div class="tldr-box">
+                <div class="tldr-content">
+                    <span class="tldr-label">TL;DR</span>
+                    <p class="tldr-text">
+                        We propose ConsID-Gen, a view-assisted I2V framework that tackles appearance drift via
+                        multi-view geometric priors and unified representation, alongside ConsIDVid, a new benchmark
+                        and evaluation suite dedicated to evaluating identity preservation.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contributions -->
+        <div class="teaser-container" style="margin-top: 1.5rem;">
+            <div style="max-width: 72rem; margin: 0 auto;">
+                <div class="contrib-section">
+                    <div class="contrib-card">
+                        <h3>Our contribution</h3>
+                        <ol class="contrib-list">
+                            <li>A holistic I2V benchmark for identity preservation, with a diverse dataset and a novel
+                                multi-view evaluation suite.</li>
+                            <li>ConsID-Gen introduces unified representation before diffusion, with multi-view guidance and
+                                improved cross-modal alignment.</li>
+                            <li>Showing that ConsID-Gen outperforms open-source SOTAs in identity consistency and in human
+                                evaluation.</li>
+                        </ol>
+                    </div>
+                    <div class="contrib-media">
+                        <img class="contrib-figure" src="images/video_generation_paradigms.png"
+                            alt="Video generation paradigms">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Overview Section -->
+    <section id="overview" class="section alt-bg">
+        <div class="container">
+            <h2 class="section-title">Overview</h2>
+            <p>
                 Image-to-Video (I2V) generation often struggles with maintaining fine-grained object identity and
                 geometric stability due to the sparsity of single-view observations. To address this, we approach the
                 problem from both data and model perspectives, introducing a comprehensive framework for
                 identity-preserving video generation.
+            </p>
+            <p>
                 We curate <strong>ConsIDVid</strong>, a large-scale object-centric dataset built with a scalable
                 pipeline for high-quality, temporally aligned videos. Alongside this, we establish
                 <strong>ConsIDVid-Bench</strong>, a novel benchmarking framework designed to evaluate multi-view
                 consistency using metrics sensitive to subtle geometric and appearance deviations.
+            </p>
+            <p>
                 We further propose <strong>ConsID-Gen</strong>, a view-assisted I2V generation framework. It augments
                 the first frame with unposed auxiliary views and fuses semantic and structural cues via a dual-stream
                 visual–geometric encoder and a text–visual connector. This unified conditioning for the Diffusion
                 Transformer backbone achieves superior identity fidelity and temporal coherence, consistently
                 outperforming leading models like Wan2.1 and HunyuanVideo.
-              </p>
-            </div>
-          </div>
+            </p>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="sec-method" class="hero is-small method-wide">
-    <div class="hero-body">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered">
-          <div class="column is-10">
-            <div class="sec-bar sec-bar-short" aria-hidden="true"></div>
-            <h2 class="title is-2 has-text-centered">Method Overview</h2>
-            <div class="method-text">
-              <h3 class="method-subtitle">1. ConsID-Gen: Model Architecture</h3>
-            </div>
-            <div class="content has-text-justified">
-              <figure class="method-figure">
+    <!-- Method Section -->
+    <section id="method" class="section">
+        <div class="container">
+            <h2 class="section-title">Method Overview</h2>
+
+            <div class="method-figure">
                 <img src="images/model_arch.jpg" alt="ConsID-Gen method overview">
-              </figure>
-              <div class="method-text">
-                <p>
-                  ConsID-Gen takes as input the first frame, two uncalibrated images, and a text instruction. Our
-                  Dual-Visual Encoder combines a Visual Encoder and a Geometry Encoder to extract visual-appearance and
-                  geometric representations. A unified multimodal interaction projector then fuses these features with
-                  the prompt to generate conditioning tokens for the DiT backbone.
-                </p>
-              </div>
-              <div class="method-text">
-                <h3 class="method-subtitle">2. ConsIDVid & ConsIDVid-Bench</h3>
-              </div>
-              <figure class="method-figure method-figure-pipeline">
+            </div>
+
+            <h3 class="subsection-title">ConsID-Gen: Model Architecture</h3>
+            <p>
+                ConsID-Gen takes as input the first frame, two uncalibrated images, and a text instruction. Our
+                Dual-Visual Encoder combines a Visual Encoder and a Geometry Encoder to extract visual-appearance and
+                geometric representations. A unified multimodal interaction projector then fuses these features with
+                the prompt to generate conditioning tokens for the DiT backbone.
+            </p>
+
+            <h3 class="subsection-title">ConsIDVid &amp; ConsIDVid-Bench</h3>
+
+            <div class="method-figure">
                 <img src="images/data_curation_pipeline.png" alt="Data curation pipeline">
-              </figure>
-              <figure class="method-figure method-figure-pipeline">
+            </div>
+
+            <div class="method-figure" style="margin-top: 1.5rem;">
                 <img src="images/data.png" alt="Data statistics and benchmark distribution">
-              </figure>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="sec-comparison" class="hero is-small method-wide">
-    <div class="hero-body">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered">
-          <div class="column is-10">
-            <div class="sec-bar sec-bar-short" aria-hidden="true"></div>
-            <h2 class="title is-2 has-text-centered">Image-to-Video Comparison</h2>
+    <!-- Comparison Section -->
+    <section id="comparison" class="section alt-bg">
+        <div class="container">
+            <h2 class="section-title">Image-to-Video Comparison</h2>
+            <p class="section-intro">
+                Side-by-side comparisons across object categories and aspect ratios highlight stronger identity
+                preservation, geometric stability, and visual faithfulness than the baseline.
+            </p>
             <div class="results-grid">
-              <div class="comparison-item square" style="--pair-ar: 1 / 1;">
-                <div class="comparison-header">
-                  <span>Baseline (Wan2.1-I2V)</span>
-                  <span>ConsID-Gen</span>
+                <div class="comparison-item square" style="--pair-ar: 1 / 1;">
+                    <div class="comparison-header">
+                        <span>Baseline (Wan2.1-I2V)</span>
+                        <span>ConsID-Gen</span>
+                    </div>
+                    <div class="comparison-pair">
+                        <video src="videos/1/WanVideo.mp4" controls muted loop playsinline></video>
+                        <video src="videos/1/ConsID-Gen.mp4" controls muted loop playsinline></video>
+                    </div>
                 </div>
-                <div class="comparison-pair">
-                  <video src="videos/1/WanVideo.mp4" controls muted loop playsinline></video>
-                  <video src="videos/1/ConsID-Gen.mp4" controls muted loop playsinline></video>
+                <div class="comparison-item landscape" style="--pair-ar: 16 / 9;">
+                    <div class="comparison-header">
+                        <span>Baseline (Wan2.1-I2V)</span>
+                        <span>ConsID-Gen</span>
+                    </div>
+                    <div class="comparison-pair">
+                        <video src="videos/2/WanVideo.mp4" controls muted loop playsinline></video>
+                        <video src="videos/2/ConsID-Gen.mp4" controls muted loop playsinline></video>
+                    </div>
                 </div>
-              </div>
-              <div class="comparison-item landscape" style="--pair-ar: 16 / 9;">
-                <div class="comparison-header">
-                  <span>Baseline (Wan2.1-I2V)</span>
-                  <span>ConsID-Gen</span>
+                <div class="comparison-item landscape" style="--pair-ar: 464 / 368;">
+                    <div class="comparison-header">
+                        <span>Baseline (Wan2.1-I2V)</span>
+                        <span>ConsID-Gen</span>
+                    </div>
+                    <div class="comparison-pair">
+                        <video src="videos/3/WanVideo.mp4" controls muted loop playsinline></video>
+                        <video src="videos/3/ConsID-Gen.mp4" controls muted loop playsinline></video>
+                    </div>
                 </div>
-                <div class="comparison-pair">
-                  <video src="videos/2/WanVideo.mp4" controls muted loop playsinline></video>
-                  <video src="videos/2/ConsID-Gen.mp4" controls muted loop playsinline></video>
+                <div class="comparison-item portrait" style="--pair-ar: 464 / 720;">
+                    <div class="comparison-header">
+                        <span>Baseline (Wan2.1-I2V)</span>
+                        <span>ConsID-Gen</span>
+                    </div>
+                    <div class="comparison-pair">
+                        <video src="videos/4/WanVideo.mp4" controls muted loop playsinline></video>
+                        <video src="videos/4/ConsID-Gen.mp4" controls muted loop playsinline></video>
+                    </div>
                 </div>
-              </div>
-              <div class="comparison-item landscape" style="--pair-ar: 464 / 368;">
-                <div class="comparison-header">
-                  <span>Baseline (Wan2.1-I2V)</span>
-                  <span>ConsID-Gen</span>
+                <div class="comparison-item landscape" style="--pair-ar: 16 / 9;">
+                    <div class="comparison-header">
+                        <span>Baseline (Wan2.1-I2V)</span>
+                        <span>ConsID-Gen</span>
+                    </div>
+                    <div class="comparison-pair">
+                        <video src="videos/5/WanVideo.mp4" controls muted loop playsinline></video>
+                        <video src="videos/5/ConsID-Gen.mp4" controls muted loop playsinline></video>
+                    </div>
                 </div>
-                <div class="comparison-pair">
-                  <video src="videos/3/WanVideo.mp4" controls muted loop playsinline></video>
-                  <video src="videos/3/ConsID-Gen.mp4" controls muted loop playsinline></video>
+                <div class="comparison-item square" style="--pair-ar: 1 / 1;">
+                    <div class="comparison-header">
+                        <span>Baseline (Wan2.1-I2V)</span>
+                        <span>ConsID-Gen</span>
+                    </div>
+                    <div class="comparison-pair">
+                        <video src="videos/6/WanVideo.mp4" controls muted loop playsinline></video>
+                        <video src="videos/6/ConsID-Gen.mp4" controls muted loop playsinline></video>
+                    </div>
                 </div>
-              </div>
-              <div class="comparison-item portrait" style="--pair-ar: 464 / 720;">
-                <div class="comparison-header">
-                  <span>Baseline (Wan2.1-I2V)</span>
-                  <span>ConsID-Gen</span>
+                <div class="comparison-item landscape" style="--pair-ar: 16 / 9;">
+                    <div class="comparison-header">
+                        <span>Baseline (Wan2.1-I2V)</span>
+                        <span>ConsID-Gen</span>
+                    </div>
+                    <div class="comparison-pair">
+                        <video src="videos/7/WanVideo.mp4" controls muted loop playsinline></video>
+                        <video src="videos/7/ConsID-Gen.mp4" controls muted loop playsinline></video>
+                    </div>
                 </div>
-                <div class="comparison-pair">
-                  <video src="videos/4/WanVideo.mp4" controls muted loop playsinline></video>
-                  <video src="videos/4/ConsID-Gen.mp4" controls muted loop playsinline></video>
+                <div class="comparison-item portrait" style="--pair-ar: 416 / 720;">
+                    <div class="comparison-header">
+                        <span>Baseline (Wan2.1-I2V)</span>
+                        <span>ConsID-Gen</span>
+                    </div>
+                    <div class="comparison-pair">
+                        <video src="videos/8/WanVideo.mp4" controls muted loop playsinline></video>
+                        <video src="videos/8/ConsID-Gen.mp4" controls muted loop playsinline></video>
+                    </div>
                 </div>
-              </div>
-              <div class="comparison-item landscape" style="--pair-ar: 16 / 9;">
-                <div class="comparison-header">
-                  <span>Baseline (Wan2.1-I2V)</span>
-                  <span>ConsID-Gen</span>
+                <div class="comparison-item landscape" style="--pair-ar: 16 / 9;">
+                    <div class="comparison-header">
+                        <span>Baseline (Wan2.1-I2V)</span>
+                        <span>ConsID-Gen</span>
+                    </div>
+                    <div class="comparison-pair">
+                        <video src="videos/9/WanVideo.mp4" controls muted loop playsinline></video>
+                        <video src="videos/9/ConsID-Gen.mp4" controls muted loop playsinline></video>
+                    </div>
                 </div>
-                <div class="comparison-pair">
-                  <video src="videos/5/WanVideo.mp4" controls muted loop playsinline></video>
-                  <video src="videos/5/ConsID-Gen.mp4" controls muted loop playsinline></video>
+                <div class="comparison-item portrait" style="--pair-ar: 416 / 720;">
+                    <div class="comparison-header">
+                        <span>Baseline (Wan2.1-I2V)</span>
+                        <span>ConsID-Gen</span>
+                    </div>
+                    <div class="comparison-pair">
+                        <video src="videos/10/WanVideo.mp4" controls muted loop playsinline></video>
+                        <video src="videos/10/ConsID-Gen.mp4" controls muted loop playsinline></video>
+                    </div>
                 </div>
-              </div>
-              <div class="comparison-item square" style="--pair-ar: 1 / 1;">
-                <div class="comparison-header">
-                  <span>Baseline (Wan2.1-I2V)</span>
-                  <span>ConsID-Gen</span>
+                <div class="comparison-item square" style="--pair-ar: 1 / 1;">
+                    <div class="comparison-header">
+                        <span>Baseline (Wan2.1-I2V)</span>
+                        <span>ConsID-Gen</span>
+                    </div>
+                    <div class="comparison-pair">
+                        <video src="videos/11/WanVideo.mp4" controls muted loop playsinline></video>
+                        <video src="videos/11/ConsID-Gen.mp4" controls muted loop playsinline></video>
+                    </div>
                 </div>
-                <div class="comparison-pair">
-                  <video src="videos/6/WanVideo.mp4" controls muted loop playsinline></video>
-                  <video src="videos/6/ConsID-Gen.mp4" controls muted loop playsinline></video>
+                <div class="comparison-item landscape" style="--pair-ar: 16 / 9;">
+                    <div class="comparison-header">
+                        <span>Baseline (Wan2.1-I2V)</span>
+                        <span>ConsID-Gen</span>
+                    </div>
+                    <div class="comparison-pair">
+                        <video src="videos/12/WanVideo.mp4" controls muted loop playsinline></video>
+                        <video src="videos/12/ConsID-Gen.mp4" controls muted loop playsinline></video>
+                    </div>
                 </div>
-              </div>
-              <div class="comparison-item landscape" style="--pair-ar: 16 / 9;">
-                <div class="comparison-header">
-                  <span>Baseline (Wan2.1-I2V)</span>
-                  <span>ConsID-Gen</span>
+                <div class="comparison-item portrait" style="--pair-ar: 480 / 832;">
+                    <div class="comparison-header">
+                        <span>Baseline (Wan2.1-I2V)</span>
+                        <span>ConsID-Gen</span>
+                    </div>
+                    <div class="comparison-pair">
+                        <video src="videos/13/WanVideo.mp4" controls muted loop playsinline></video>
+                        <video src="videos/13/ConsID-Gen.mp4" controls muted loop playsinline></video>
+                    </div>
                 </div>
-                <div class="comparison-pair">
-                  <video src="videos/7/WanVideo.mp4" controls muted loop playsinline></video>
-                  <video src="videos/7/ConsID-Gen.mp4" controls muted loop playsinline></video>
+                <div class="comparison-item landscape" style="--pair-ar: 16 / 9;">
+                    <div class="comparison-header">
+                        <span>Baseline (Wan2.1-I2V)</span>
+                        <span>ConsID-Gen</span>
+                    </div>
+                    <div class="comparison-pair">
+                        <video src="videos/14/WanVideo.mp4" controls muted loop playsinline></video>
+                        <video src="videos/14/ConsID-Gen.mp4" controls muted loop playsinline></video>
+                    </div>
                 </div>
-              </div>
-              <div class="comparison-item portrait" style="--pair-ar: 416 / 720;">
-                <div class="comparison-header">
-                  <span>Baseline (Wan2.1-I2V)</span>
-                  <span>ConsID-Gen</span>
-                </div>
-                <div class="comparison-pair">
-                  <video src="videos/8/WanVideo.mp4" controls muted loop playsinline></video>
-                  <video src="videos/8/ConsID-Gen.mp4" controls muted loop playsinline></video>
-                </div>
-              </div>
-              <div class="comparison-item landscape" style="--pair-ar: 16 / 9;">
-                <div class="comparison-header">
-                  <span>Baseline (Wan2.1-I2V)</span>
-                  <span>ConsID-Gen</span>
-                </div>
-                <div class="comparison-pair">
-                  <video src="videos/9/WanVideo.mp4" controls muted loop playsinline></video>
-                  <video src="videos/9/ConsID-Gen.mp4" controls muted loop playsinline></video>
-                </div>
-              </div>
-              <div class="comparison-item portrait" style="--pair-ar: 416 / 720;">
-                <div class="comparison-header">
-                  <span>Baseline (Wan2.1-I2V)</span>
-                  <span>ConsID-Gen</span>
-                </div>
-                <div class="comparison-pair">
-                  <video src="videos/10/WanVideo.mp4" controls muted loop playsinline></video>
-                  <video src="videos/10/ConsID-Gen.mp4" controls muted loop playsinline></video>
-                </div>
-              </div>
-              <div class="comparison-item square" style="--pair-ar: 1 / 1;">
-                <div class="comparison-header">
-                  <span>Baseline (Wan2.1-I2V)</span>
-                  <span>ConsID-Gen</span>
-                </div>
-                <div class="comparison-pair">
-                  <video src="videos/11/WanVideo.mp4" controls muted loop playsinline></video>
-                  <video src="videos/11/ConsID-Gen.mp4" controls muted loop playsinline></video>
-                </div>
-              </div>
-              <div class="comparison-item landscape" style="--pair-ar: 16 / 9;">
-                <div class="comparison-header">
-                  <span>Baseline (Wan2.1-I2V)</span>
-                  <span>ConsID-Gen</span>
-                </div>
-                <div class="comparison-pair">
-                  <video src="videos/12/WanVideo.mp4" controls muted loop playsinline></video>
-                  <video src="videos/12/ConsID-Gen.mp4" controls muted loop playsinline></video>
-                </div>
-              </div>
-              <div class="comparison-item portrait" style="--pair-ar: 480 / 832;">
-                <div class="comparison-header">
-                  <span>Baseline (Wan2.1-I2V)</span>
-                  <span>ConsID-Gen</span>
-                </div>
-                <div class="comparison-pair">
-                  <video src="videos/13/WanVideo.mp4" controls muted loop playsinline></video>
-                  <video src="videos/13/ConsID-Gen.mp4" controls muted loop playsinline></video>
-                </div>
-              </div>
-              <div class="comparison-item landscape" style="--pair-ar: 16 / 9;">
-                <div class="comparison-header">
-                  <span>Baseline (Wan2.1-I2V)</span>
-                  <span>ConsID-Gen</span>
-                </div>
-                <div class="comparison-pair">
-                  <video src="videos/14/WanVideo.mp4" controls muted loop playsinline></video>
-                  <video src="videos/14/ConsID-Gen.mp4" controls muted loop playsinline></video>
-                </div>
-              </div>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-
-
-  <footer id="sec-bibtex" class="footer">
-    <div class="container">
-      <div class="columns is-centered">
-        <div class="column is-8">
-          <div class="content">
-            <div class="footer-bibtex">
-              <div class="footer-bibtex-label">BibTeX</div>
-              <div class="footer-bibtex-code-wrap">
-                <button class="footer-bibtex-copy" type="button" data-copy-target="bibtex-code">Copy</button>
-                <pre>
-<code id="bibtex-code">@misc{wu2026considgenviewconsistentidentitypreservingimagetovideo,
+    <!-- Citation Section -->
+    <section id="citation" class="citation-section">
+        <div class="container">
+            <h2 class="section-title" style="font-size: 1.5rem; border: none; margin-bottom: 1rem;">Citation</h2>
+            <div class="citation-block group">
+                <button onclick="copyBibtex()" class="citation-copy-btn">
+                    <i class="fa-regular fa-copy"></i> Copy
+                </button>
+                <div id="bibtex-text" style="display: none;">@misc{wu2026considgenviewconsistentidentitypreservingimagetovideo,
   title={ConsID-Gen: View-Consistent and Identity-Preserving Image-to-Video Generation}, 
   author={Mingyang Wu and Ashirbad Mishra and Soumik Dey and Shuo Xing and Naveen Ravipati and Hansi Wu and Binbin Li and Zhengzhong Tu},
   year={2026},
@@ -401,145 +389,199 @@
   archivePrefix={arXiv},
   primaryClass={cs.CV},
   url={https://arxiv.org/abs/2602.10113},
-}</code>
-                </pre>
-              </div>
+}</div>
+                <pre class="citation-code"><code id="bibtex-code">@misc{wu2026considgenviewconsistentidentitypreservingimagetovideo,
+  title={ConsID-Gen: View-Consistent and Identity-Preserving Image-to-Video Generation}, 
+  author={Mingyang Wu and Ashirbad Mishra and Soumik Dey and Shuo Xing and Naveen Ravipati and Hansi Wu and Binbin Li and Zhengzhong Tu},
+  year={2026},
+  eprint={2602.10113},
+  archivePrefix={arXiv},
+  primaryClass={cs.CV},
+  url={https://arxiv.org/abs/2602.10113},
+}</code></pre>
             </div>
-            <p>
-              This page was built using the
-              <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic
-                Project Page Template</a> and
-              <a href="https://diffusion-tokenflow.github.io/" target="_blank">TokenFlow</a>.
-              You are free to borrow the of this website, we just ask that you link back to this page in the footer.
-              <br> This website is licensed under a
-              <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
-                Commons Attribution-ShareAlike 4.0 International License</a>.
-            </p>
-          </div>
         </div>
-      </div>
-    </div>
-  </footer>
+    </section>
 
-  <script>
-    window.addEventListener('DOMContentLoaded', () => {
-      const comparisonItems = document.querySelectorAll('.comparison-item');
+    <!-- Footer -->
+    <section class="footer">
+        <div class="container">
+            <p>
+                This page was built using the
+                <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic
+                    Project Page Template</a> and
+                <a href="https://seoul-world-model.github.io/" target="_blank">Seoul World Model</a>.
+                You are free to borrow the source of this website, we just ask that you link back to this page in the footer.
+                <br>This website is licensed under a
+                <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+                    Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+        </div>
+    </section>
 
-      comparisonItems.forEach((item) => {
-        const videos = Array.from(item.querySelectorAll('video'));
-        if (videos.length < 2) return;
+    <script>
+        // Fade-in Animation
+        function initFadeInAnimations() {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
 
-        let isSyncing = false;
-        let lastSyncAt = 0;
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
 
-        const syncPlay = (source) => {
-          if (isSyncing) return;
-          isSyncing = true;
-          videos.forEach((video) => {
-            if (video === source) return;
-            if (Math.abs(video.currentTime - source.currentTime) > 0.15) {
-              video.currentTime = source.currentTime;
-            }
-            if (video.paused) {
-              video.play().catch(() => {});
-            }
-          });
-          isSyncing = false;
-        };
-
-        const syncPause = (source) => {
-          if (isSyncing) return;
-          isSyncing = true;
-          videos.forEach((video) => {
-            if (video === source) return;
-            if (!video.paused) video.pause();
-          });
-          isSyncing = false;
-        };
-
-        const syncSeek = (source) => {
-          if (isSyncing) return;
-          isSyncing = true;
-          videos.forEach((video) => {
-            if (video === source) return;
-            video.currentTime = source.currentTime;
-          });
-          isSyncing = false;
-        };
-
-        videos.forEach((video) => {
-          video.addEventListener('play', () => syncPlay(video));
-          video.addEventListener('pause', () => syncPause(video));
-          video.addEventListener('seeking', () => syncSeek(video));
-          video.addEventListener('timeupdate', () => {
-            if (isSyncing) return;
-            const now = Date.now();
-            if (now - lastSyncAt < 200) return;
-            videos.forEach((peer) => {
-              if (peer === video) return;
-              if (Math.abs(peer.currentTime - video.currentTime) > 0.2) {
-                isSyncing = true;
-                peer.currentTime = video.currentTime;
-                isSyncing = false;
-                lastSyncAt = now;
-              }
+            const sections = document.querySelectorAll('.section, .hero-section, .citation-section, .footer');
+            sections.forEach(section => {
+                section.classList.add('fade-in-section');
+                observer.observe(section);
             });
-          });
-          video.addEventListener('ratechange', () => {
-            if (isSyncing) return;
-            isSyncing = true;
-            videos.forEach((peer) => {
-              if (peer === video) return;
-              peer.playbackRate = video.playbackRate;
+        }
+
+        // Scroll Spy for Sidebar
+        function initScrollSpy() {
+            const sections = document.querySelectorAll('section[id]');
+            const sidebarLinks = document.querySelectorAll('.sidebar-item');
+            const sidebar = document.querySelector('.sidebar');
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '-50% 0px -50% 0px',
+                threshold: 0
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const id = entry.target.getAttribute('id');
+
+                        sidebarLinks.forEach(link => {
+                            link.classList.remove('active');
+                        });
+
+                        const activeLink = document.querySelector(`.sidebar-item[href="#${id}"]`);
+                        if (activeLink) {
+                            activeLink.classList.add('active');
+
+                            const linkRect = activeLink.getBoundingClientRect();
+                            const sidebarRect = sidebar.getBoundingClientRect();
+                            const relativeTop = linkRect.top - sidebarRect.top;
+                            sidebar.style.setProperty('--active-position', `${relativeTop - 32}px`);
+                        }
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                observer.observe(section);
             });
-            isSyncing = false;
-          });
+        }
+
+        // Copy BibTeX
+        function copyBibtex() {
+            const text = document.getElementById('bibtex-text').innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                const btn = document.querySelector('.citation-copy-btn');
+                const original = btn.innerHTML;
+                btn.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
+                btn.classList.add('is-done');
+                setTimeout(() => {
+                    btn.innerHTML = original;
+                    btn.classList.remove('is-done');
+                }, 2000);
+            });
+        }
+
+        // Video Sync for Comparison Pairs
+        function initVideoSync() {
+            const comparisonItems = document.querySelectorAll('.comparison-item');
+
+            comparisonItems.forEach((item) => {
+                const videos = Array.from(item.querySelectorAll('video'));
+                if (videos.length < 2) return;
+
+                let isSyncing = false;
+                let lastSyncAt = 0;
+
+                const syncPlay = (source) => {
+                    if (isSyncing) return;
+                    isSyncing = true;
+                    videos.forEach((video) => {
+                        if (video === source) return;
+                        if (Math.abs(video.currentTime - source.currentTime) > 0.15) {
+                            video.currentTime = source.currentTime;
+                        }
+                        if (video.paused) {
+                            video.play().catch(() => {});
+                        }
+                    });
+                    isSyncing = false;
+                };
+
+                const syncPause = (source) => {
+                    if (isSyncing) return;
+                    isSyncing = true;
+                    videos.forEach((video) => {
+                        if (video === source) return;
+                        if (!video.paused) video.pause();
+                    });
+                    isSyncing = false;
+                };
+
+                const syncSeek = (source) => {
+                    if (isSyncing) return;
+                    isSyncing = true;
+                    videos.forEach((video) => {
+                        if (video === source) return;
+                        video.currentTime = source.currentTime;
+                    });
+                    isSyncing = false;
+                };
+
+                videos.forEach((video) => {
+                    video.addEventListener('play', () => syncPlay(video));
+                    video.addEventListener('pause', () => syncPause(video));
+                    video.addEventListener('seeking', () => syncSeek(video));
+                    video.addEventListener('timeupdate', () => {
+                        if (isSyncing) return;
+                        const now = Date.now();
+                        if (now - lastSyncAt < 200) return;
+                        videos.forEach((peer) => {
+                            if (peer === video) return;
+                            if (Math.abs(peer.currentTime - video.currentTime) > 0.2) {
+                                isSyncing = true;
+                                peer.currentTime = video.currentTime;
+                                isSyncing = false;
+                                lastSyncAt = now;
+                            }
+                        });
+                    });
+                    video.addEventListener('ratechange', () => {
+                        if (isSyncing) return;
+                        isSyncing = true;
+                        videos.forEach((peer) => {
+                            if (peer === video) return;
+                            peer.playbackRate = video.playbackRate;
+                        });
+                        isSyncing = false;
+                    });
+                });
+            });
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            initScrollSpy();
+            initFadeInAnimations();
+            initVideoSync();
         });
-      });
-
-      const copyButton = document.querySelector('.footer-bibtex-copy');
-      if (!copyButton) return;
-
-      const copyText = async (text) => {
-        if (navigator.clipboard && window.isSecureContext) {
-          await navigator.clipboard.writeText(text);
-          return;
-        }
-
-        const helper = document.createElement('textarea');
-        helper.value = text;
-        helper.setAttribute('readonly', '');
-        helper.style.position = 'absolute';
-        helper.style.left = '-9999px';
-        document.body.appendChild(helper);
-        helper.select();
-        document.execCommand('copy');
-        helper.remove();
-      };
-
-      const setCopyState = (label, isDone) => {
-        copyButton.textContent = label;
-        copyButton.classList.toggle('is-done', isDone);
-      };
-
-      copyButton.addEventListener('click', async () => {
-        const targetId = copyButton.getAttribute('data-copy-target');
-        const codeBlock = targetId ? document.getElementById(targetId) : null;
-        if (!codeBlock) return;
-
-        try {
-          await copyText(codeBlock.innerText.trim());
-          setCopyState('Copied!', true);
-          setTimeout(() => setCopyState('Copy', false), 1500);
-        } catch (_error) {
-          setCopyState('Failed', false);
-          setTimeout(() => setCopyState('Copy', false), 1500);
-        }
-      });
-    });
-  </script>
-  </div>
-  </section>
+    </script>
 </body>
 
 </html>
