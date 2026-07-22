@@ -139,7 +139,8 @@ nav {
  *------------------*/
 
 .home-wrapper {
-  padding-top: 70px;
+  padding-top: 100px;
+  padding-bottom: 60px;
 }
 
 .home-wrapper .picture img {
@@ -211,6 +212,7 @@ nav {
 
 .home-wrapper .interests .section-title {
   font-size: 15px;
+  font-weight: 700;
   padding-bottom: 4px;
 }
 
@@ -254,7 +256,7 @@ nav {
 
 .pub-wrapper .venue {
   margin-top: 4px;
-  margin-bottom: 12px;
+  margin-bottom: 28px;
   line-height: 1.3;
 }
 
@@ -405,7 +407,8 @@ nav {
   }
 
   .home-wrapper {
-    padding-top: 54px;
+    padding-top: 80px;
+    padding-bottom: 48px;
   }
 
   .home-wrapper .row {
