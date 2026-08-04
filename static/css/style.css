@@ -150,6 +150,7 @@ nav {
 @media (min-width: 576px) {
   .home-wrapper .picture img {
     max-width: 200px;
+    margin-top: 10px;
   }
 }
 
@@ -256,8 +257,12 @@ nav {
 
 .pub-wrapper .venue {
   margin-top: 4px;
-  margin-bottom: 28px;
+  margin-bottom: 0;
   line-height: 1.3;
+}
+
+.pub-wrapper .section-item + .section-item {
+  margin-top: 8px;
 }
 
 .pub-wrapper .figure img {
