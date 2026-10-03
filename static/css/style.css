@@ -275,6 +275,29 @@ nav {
   line-height: 1.45;
 }
 
+.pub-toggle {
+  color: var(--muted-blue-gray);
+  font-size: inherit;
+  font-weight: 500;
+  margin-left: 4px;
+}
+
+.pub-toggle:hover {
+  color: var(--link-blue-hover);
+  text-decoration: none;
+}
+
+.pub-topic + .pub-topic {
+  margin-top: 28px;
+}
+
+.pub-topic-title {
+  color: var(--muted-blue-gray);
+  font-size: 17px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
 .pub-wrapper .section-item + .section-item {
   margin-top: 12px;
 }

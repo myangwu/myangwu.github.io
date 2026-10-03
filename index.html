@@ -61,12 +61,13 @@
               <h1 class="name">Mingyang Wu</h1>
               <div class="interests" id="bio">
                 <p class="bio-text">
-                  Hi, there! I currently work at generative modeling (images and videos) and generative evaluation.
-                  Previously, I completed a Master's degree in Computer Science from <a href="https://engineering.tamu.edu/cse/index.html" target="_blank" rel="noopener noreferrer">Texas A&amp;M University</a>, advised by Prof. <a href="https://vztu.github.io/" target="_blank" rel="noopener noreferrer">Zhengzhong Tu</a>.
+                  Hi there! I am a Ph.D. student in Computer Science at <a href="https://engineering.tamu.edu/cse/index.html" target="_blank" rel="noopener noreferrer">Texas A&amp;M University</a>, advised by Prof. <a href="https://vztu.github.io/" target="_blank" rel="noopener noreferrer">Zhengzhong Tu</a>,
+                  with a primary focus on image/video generative modeling, evaluation, and distillation.
                 </p>
               </div>
               <div class="email-line">
                 <a href="https://scholar.google.com/citations?user=5Fh1Ra8AAAAJ&hl=en" target="_blank" rel="noopener noreferrer">G. Scholar</a> /
+                <a href="https://de.linkedin.com/in/mingyang-wu-606abb305" target="_blank" rel="noopener noreferrer">LinkedIn</a> /
                 Contact me: <a href="mailto:mingyang@tamu.edu">mingyang@tamu.edu</a>
               </div>
             </div>
@@ -79,77 +80,310 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col col-wrapper">
-            <div class="section-title">Selected Publications</div>
+            <div class="section-title">
+              <span id="pub-title">Selected Publications</span>
+              <a href="#pub" class="pub-toggle" id="pub-toggle" role="button" aria-expanded="false">(All)</a>
+            </div>
           </div>
         </div>
 
-        <div class="row align-items-center section-item">
+        <div id="pub-selected">
 
-          <!-- Paper ConsID-Gen-->
-          <div class="col-xs-12 col-md-3 col-lg-3 col-wrapper">
-            <div class="figure">
-              <a href="#"><img src="ConsID-Gen/images/model_arch.jpg" alt="[motion]"></a>
+          <div class="row align-items-center section-item" data-topic="video-generation">
+
+            <!-- Paper ConsID-Gen-->
+            <div class="col-xs-12 col-md-3 col-lg-3 col-wrapper">
+              <div class="figure">
+                <a href="#"><img src="ConsID-Gen/images/model_arch.jpg" alt="[motion]"></a>
+              </div>
             </div>
+            <div class="col-xs-12 col-md-9 col-lg-9 col-wrapper">
+              <div class="title">
+                <a href="https://openaccess.thecvf.com/content/CVPR2026/papers/Wu_ConsID-Gen_View-Consistent_and_Identity-Preserving_Image-to-Video_Generation_CVPR_2026_paper.pdf" target="_blank">
+                  ConsID-Gen: View-Consistent and Identity-Preserving Image-to-Video Generation
+                </a>
+              </div>
+              <div class="authors">
+                <me>Mingyang Wu</me>, <a href="https://scholar.google.com/citations?user=Cc_213MAAAAJ&hl=en">Ashirbad
+                  Mishra</a>, <a href="https://scholar.google.com/citations?user=nlZVZtMAAAAJ&hl=en">Soumik Dey</a>, <a
+                  href="https://shuoxing98.github.io/">Shuo Xing</a>, Naveen Ravipati,
+                <a href="https://scholar.google.co.jp/citations?user=CucpbkEAAAAJ&hl=ja">Hansi Wu</a>, <a
+                  href="https://scholar.google.com/citations?user=1UlUOMMAAAAJ&hl=en">Binbin Li</a>, <a
+                  href="https://vztu.github.io/">Zhengzhong Tu</a><sup>†</sup>
+              </div>
+              <div class="venue">
+                [CVPR 2026] ·
+                <a href="https://myangwu.github.io/ConsID-Gen/" target="_blank">Webpage</a> ·
+                <a href="https://openaccess.thecvf.com/content/CVPR2026/papers/Wu_ConsID-Gen_View-Consistent_and_Identity-Preserving_Image-to-Video_Generation_CVPR_2026_paper.pdf" target="_blank">Paper</a> ·
+                <!-- <a href="https://github.com/taco-group/ConsID-Gen" target="_blank">Code</a> · -->
+                <a href="https://huggingface.co/datasets/mingyang-wu/ConsIDVid" target="_blank">Dataset</a>
+              </div>
+            </div>
+
           </div>
-          <div class="col-xs-12 col-md-9 col-lg-9 col-wrapper">
-            <div class="title">
-              <a href="https://arxiv.org/abs/2602.10113" target="_blank">
-                ConsID-Gen: View-Consistent and Identity-Preserving Image-to-Video Generation
-              </a>
+
+          <div class="row align-items-center section-item" data-topic="low-level-vision">
+
+            <!-- Paper 4KAgent-->
+            <div class="col-xs-12 col-md-3 col-lg-3 col-wrapper">
+              <div class="figure">
+                <a href="#"><img src="static/images/4KAgent.jpg" alt="[motion]"></a>
+              </div>
             </div>
-            <div class="authors">
-              <me>Mingyang Wu</me>, <a href="https://scholar.google.com/citations?user=Cc_213MAAAAJ&hl=en">Ashirbad
-                Mishra</a>, <a href="https://scholar.google.com/citations?user=nlZVZtMAAAAJ&hl=en">Soumik Dey</a>, <a
-                href="https://shuoxing98.github.io/">Shuo Xing</a>, Naveen Ravipati,
-              <a href="https://scholar.google.co.jp/citations?user=CucpbkEAAAAJ&hl=ja">Hansi Wu</a>, <a
-                href="https://scholar.google.com/citations?user=1UlUOMMAAAAJ&hl=en">Binbin Li</a>, <a
-                href="https://vztu.github.io/">Zhengzhong Tu</a><sup>†</sup>
+            <div class="col-xs-12 col-md-9 col-lg-9 col-wrapper">
+              <div class="title">
+                <a href="https://4kagent.github.io/" target="_blank">
+                  4KAgent: Agentic Any Image to 4K Super-Resolution
+                </a>
+              </div>
+              <div class="authors">
+                <a href="https://yushenzuo.github.io/">Yushen Zuo</a>, <a
+                  href="https://scholar.google.com/citations?user=Xo4MWK0AAAAJ&hl=zh-CN">Qi Zheng</a><sup>*</sup>, <me>
+                  Mingyang Wu<sup>*</sup></me>, <a href="https://xinrui-jiang.github.io/">Xinrui Jiang</a><sup>*</sup>, <a
+                  href="https://shadowiterator.github.io/">Renjie Li</a>,
+                <a href="https://jianwang-cmu.github.io/">Jian Wang</a>, <a href="https://yzhang34.github.io/">Yide
+                  Zhang</a>, <a href="https://gengchenmai.github.io/">Gengchen Mai</a>, <a
+                  href="https://mede.caltech.edu/people/lvw">Lihong Wang</a>, <a href="https://www.james-zou.com/">James
+                  Zou</a>, <a href="https://www.xiaoyumu.com/">Xiaoyu Wang</a>, <a
+                  href="https://faculty.ucmerced.edu/mhyang/">Ming-Hsuan Yang</a>, <a
+                  href="https://vztu.github.io/">Zhengzhong Tu</a><sup>†</sup>
+              </div>
+              <div class="venue">
+                [NeurIPS 2025] ·
+                <a href="https://4kagent.github.io/" target="_blank">Webpage</a> ·
+                <a href="https://arxiv.org/abs/2507.07105" target="_blank">Paper</a> ·
+                <a href="https://github.com/taco-group/4KAgent" target="_blank">Code</a>
+              </div>
             </div>
-            <div class="venue">
-              [CVPR 2026] ·
-              <a href="https://myangwu.github.io/ConsID-Gen/" target="_blank">Webpage</a> ·
-              <a href="https://arxiv.org/abs/2602.10113" target="_blank">Paper</a> ·
-              <!-- <a href="https://github.com/taco-group/ConsID-Gen" target="_blank">Code</a> · -->
-              <a href="https://huggingface.co/datasets/mingyang-wu/ConsIDVid" target="_blank">Dataset</a>
-            </div>
+
           </div>
 
         </div>
 
-        <div class="row align-items-center section-item">
+        <!-- Papers shown only under (All), not in Selected Publications -->
+        <div id="pub-more" class="d-none">
 
-          <!-- Paper 4KAgent-->
-          <div class="col-xs-12 col-md-3 col-lg-3 col-wrapper">
-            <div class="figure">
-              <a href="#"><img src="static/images/4KAgent.jpg" alt="[motion]"></a>
+          <div class="row align-items-center section-item" data-topic="video-distillation">
+
+            <!-- Paper Visko Orbis-->
+            <div class="col-xs-12 col-md-3 col-lg-3 col-wrapper">
+              <div class="figure">
+                <a href="#"><img src="static/images/ViskoOrbis.jpg" alt="[Visko Orbis]"></a>
+              </div>
             </div>
-          </div>
-          <div class="col-xs-12 col-md-9 col-lg-9 col-wrapper">
-            <div class="title">
-              <a href="https://4kagent.github.io/" target="_blank">
-                4KAgent: Agentic Any Image to 4K Super-Resolution
-              </a>
+            <div class="col-xs-12 col-md-9 col-lg-9 col-wrapper">
+              <div class="title">
+                <a href="https://arxiv.org/abs/2607.26694" target="_blank">
+                  Visko Orbis 1.0: A Live Model for Real-Time Interactive Long Video Generation
+                </a>
+              </div>
+              <div class="authors">
+                <a href="https://www.xiangbogao.com/">Xiangbo Gao</a>, <a href="https://reed-yang.github.io/">Siyuan Yang</a>, <a href="https://geobrownmotion.github.io/">Ping He</a>, <me>Mingyang Wu</me>, <a href="https://wyhallenwu.github.io/">Yuheng Wu</a>, <a href="https://yushenzuo.github.io/">Yushen Zuo</a>, Jiongze Yu, Ryan Cui, Hongyuan Hua, Devin Ma, Xiao Jin, Yubo Ruan, Qing Yin, Jie Yang, <a href="https://vztu.github.io/">Zhengzhong Tu</a><sup>†</sup>
+              </div>
+              <div class="venue">
+                [Technical Report] ·
+                <a href="https://arxiv.org/abs/2607.26694" target="_blank">Paper</a>
+              </div>
             </div>
-            <div class="authors">
-              <a href="https://yushenzuo.github.io/">Yushen Zuo</a>, <a
-                href="https://scholar.google.com/citations?user=Xo4MWK0AAAAJ&hl=zh-CN">Qi Zheng</a><sup>*</sup>, <me>
-                Mingyang Wu<sup>*</sup></me>, <a href="https://xinrui-jiang.github.io/">Xinrui Jiang</a><sup>*</sup>, <a
-                href="https://shadowiterator.github.io/">Renjie Li</a>,
-              <a href="https://jianwang-cmu.github.io/">Jian Wang</a>, <a href="https://yzhang34.github.io/">Yide
-                Zhang</a>, <a href="https://gengchenmai.github.io/">Gengchen Mai</a>, <a
-                href="https://mede.caltech.edu/people/lvw">Lihong Wang</a>, <a href="https://www.james-zou.com/">James
-                Zou</a>, <a href="https://www.xiaoyumu.com/">Xiaoyu Wang</a>, <a
-                href="https://faculty.ucmerced.edu/mhyang/">Ming-Hsuan Yang</a>, <a
-                href="https://vztu.github.io/">Zhengzhong Tu</a><sup>†</sup>
-            </div>
-            <div class="venue">
-              [NeurIPS 2025] ·
-              <a href="https://4kagent.github.io/" target="_blank">Webpage</a> ·
-              <a href="https://arxiv.org/abs/2507.07105" target="_blank">Paper</a> ·
-              <a href="https://github.com/taco-group/4KAgent" target="_blank">Code</a>
-            </div>
+
           </div>
 
+          <div class="row align-items-center section-item" data-topic="generative-evaluation">
+
+            <!-- Paper CV-Arena-->
+            <div class="col-xs-12 col-md-3 col-lg-3 col-wrapper">
+              <div class="figure">
+                <a href="#"><img src="static/images/CV-Arena.jpg" alt="[CV-Arena]"></a>
+              </div>
+            </div>
+            <div class="col-xs-12 col-md-9 col-lg-9 col-wrapper">
+              <div class="title">
+                <a href="https://arxiv.org/abs/2606.00931" target="_blank">
+                  CV-Arena: An Open Benchmark for Instructional Computer Vision Problem Solving with Human-AI Collaborative Preferences
+                </a>
+              </div>
+              <div class="authors">
+                <a href="https://ark1234.github.io/">Fangzhou Lin</a>, Peiran Li, Lingyu Xu, <a href="https://momofodr.github.io/">Wenjing Chen</a>, Qianwen Ge, <a href="https://shuoxing98.github.io/">Shuo Xing</a>, <me>Mingyang Wu</me>, <a href="https://www.xiangbogao.com/">Xiangbo Gao</a>, <a href="https://reed-yang.github.io/">Siyuan Yang</a>, Kazunori Yamada, Ziming Zhang, Haichong Zhang, Zhen Dong, <a href="https://faculty.ucmerced.edu/mhyang/">Ming-Hsuan Yang</a>, <a href="https://vztu.github.io/">Zhengzhong Tu</a><sup>†</sup>
+              </div>
+              <div class="venue">
+                [arXiv 2026] ·
+                <a href="https://ark1234.github.io/cv-arena" target="_blank">Webpage</a> ·
+                <a href="https://arxiv.org/abs/2606.00931" target="_blank">Paper</a> ·
+                <a href="https://github.com/taco-group/CV-Arena" target="_blank">Code</a>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="row align-items-center section-item" data-topic="generative-evaluation">
+
+            <!-- Paper VEFX-Bench-->
+            <div class="col-xs-12 col-md-3 col-lg-3 col-wrapper">
+              <div class="figure">
+                <a href="#"><img src="static/images/VEFX-Bench.jpg" alt="[VEFX-Bench]"></a>
+              </div>
+            </div>
+            <div class="col-xs-12 col-md-9 col-lg-9 col-wrapper">
+              <div class="title">
+                <a href="https://arxiv.org/abs/2604.16272" target="_blank">
+                  VEFX-Bench: A Holistic Benchmark for Generic Video Editing and Visual Effects
+                </a>
+              </div>
+              <div class="authors">
+                <a href="https://www.xiangbogao.com/">Xiangbo Gao</a>, <a href="https://sicongjiang.com/">Sicong Jiang</a>, Bangya Liu, <a href="https://cxh42.github.io/">Xinghao Chen</a>, Minglai Yang, <a href="https://reed-yang.github.io/">Siyuan Yang</a>, <me>Mingyang Wu</me>, Jiongze Yu, <a href="https://scholar.google.com/citations?user=Xo4MWK0AAAAJ&hl=zh-CN">Qi Zheng</a>, Haozhi Wang, Jiayi Zhang, Jie Yang, Zihan Wang, Qing Yin, <a href="https://vztu.github.io/">Zhengzhong Tu</a><sup>†</sup>
+              </div>
+              <div class="venue">
+                [arXiv 2026] ·
+                <a href="https://xiangbogaobarry.github.io/VEFX-Bench/" target="_blank">Webpage</a> ·
+                <a href="https://arxiv.org/abs/2604.16272" target="_blank">Paper</a> ·
+                <a href="https://github.com/Visko-Platform/VEFX-Bench" target="_blank">Code</a>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="row align-items-center section-item" data-topic="generative-evaluation">
+
+            <!-- Paper Pulse of Motion-->
+            <div class="col-xs-12 col-md-3 col-lg-3 col-wrapper">
+              <div class="figure">
+                <a href="#"><img src="static/images/PulseOfMotion.jpg" alt="[Pulse of Motion]"></a>
+              </div>
+            </div>
+            <div class="col-xs-12 col-md-9 col-lg-9 col-wrapper">
+              <div class="title">
+                <a href="https://arxiv.org/abs/2603.14375" target="_blank">
+                  The Pulse of Motion: Measuring Physical Frame Rate from Visual Dynamics
+                </a>
+              </div>
+              <div class="authors">
+                <a href="https://www.xiangbogao.com/">Xiangbo Gao</a>, <me>Mingyang Wu</me>, <a href="https://reed-yang.github.io/">Siyuan Yang</a>, Jiongze Yu, Pardis Taghavi, <a href="https://ark1234.github.io/">Fangzhou Lin</a>, <a href="https://vztu.github.io/">Zhengzhong Tu</a><sup>†</sup>
+              </div>
+              <div class="venue">
+                [CVPR 2026 Workshop] ·
+                <a href="https://xiangbogaobarry.github.io/Pulse-of-Motion/" target="_blank">Webpage</a> ·
+                <a href="https://arxiv.org/abs/2603.14375" target="_blank">Paper</a> ·
+                <a href="https://github.com/taco-group/Pulse-of-Motion" target="_blank">Code</a>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="row align-items-center section-item" data-topic="generative-evaluation">
+
+            <!-- Paper Q-Router-->
+            <div class="col-xs-12 col-md-3 col-lg-3 col-wrapper">
+              <div class="figure">
+                <a href="#"><img src="static/images/Q-Router.jpg" alt="[Q-Router]"></a>
+              </div>
+            </div>
+            <div class="col-xs-12 col-md-9 col-lg-9 col-wrapper">
+              <div class="title">
+                <a href="https://arxiv.org/abs/2510.08789" target="_blank">
+                  Q-Router: Agentic Video Quality Assessment with Expert Model Routing and Artifact Localization
+                </a>
+              </div>
+              <div class="authors">
+                <a href="https://shuoxing98.github.io/">Shuo Xing</a>, <a href="https://scholar.google.com/citations?user=nlZVZtMAAAAJ&hl=en">Soumik Dey</a>, <me>Mingyang Wu</me>, <a href="https://scholar.google.com/citations?user=Cc_213MAAAAJ&hl=en">Ashirbad Mishra</a>, Naveen Ravipati, <a href="https://scholar.google.com/citations?user=1UlUOMMAAAAJ&hl=en">Binbin Li</a>, <a href="https://scholar.google.co.jp/citations?user=CucpbkEAAAAJ&hl=ja">Hansi Wu</a>, <a href="https://vztu.github.io/">Zhengzhong Tu</a><sup>†</sup>
+              </div>
+              <div class="venue">
+                [arXiv 2025] ·
+                <a href="https://arxiv.org/abs/2510.08789" target="_blank">Paper</a>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="row align-items-center section-item" data-topic="low-level-vision">
+
+            <!-- Paper 4KLSDB-->
+            <div class="col-xs-12 col-md-3 col-lg-3 col-wrapper">
+              <div class="figure">
+                <a href="#"><img src="static/images/4KLSDB.jpg" alt="[4KLSDB]"></a>
+              </div>
+            </div>
+            <div class="col-xs-12 col-md-9 col-lg-9 col-wrapper">
+              <div class="title">
+                <a href="https://arxiv.org/abs/2605.24762" target="_blank">
+                  4KLSDB: A Large-Scale Dataset for 4K Image Restoration and Generation
+                </a>
+              </div>
+              <div class="authors">
+                <a href="https://singlebicycle.github.io/">Zihao Zhu</a>, Kuan-Ru Huang, Zhaoming Xu, <a href="https://shadowiterator.github.io/">Renjie Li</a>, Bo Wu, Ruizheng Bai, <me>Mingyang Wu</me>, <a href="https://sayak.dev/">Sayak Paul</a>, <a href="https://vztu.github.io/">Zhengzhong Tu</a><sup>†</sup>
+              </div>
+              <div class="venue">
+                [CVPR 2026 Workshop] ·
+                <a href="https://4klsdb.github.io/" target="_blank">Webpage</a> ·
+                <a href="https://arxiv.org/abs/2605.24762" target="_blank">Paper</a> ·
+                <a href="https://github.com/taco-group/4KLSDB" target="_blank">Code</a> ·
+                <a href="https://huggingface.co/datasets/SingleBicycle/4KLSDB" target="_blank">Dataset</a>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="row align-items-center section-item" data-topic="embodied-ai">
+
+            <!-- Paper VISTA-->
+            <div class="col-xs-12 col-md-3 col-lg-3 col-wrapper">
+              <div class="figure">
+                <a href="#"><img src="static/images/VISTA.png" alt="[VISTA]"></a>
+              </div>
+            </div>
+            <div class="col-xs-12 col-md-9 col-lg-9 col-wrapper">
+              <div class="title">
+                <a href="https://arxiv.org/abs/2505.07868" target="_blank">
+                  VISTA: Generative Visual Imagination for Vision-and-Language Navigation
+                </a>
+              </div>
+              <div class="authors">
+                <a href="https://huangyanjia.github.io/">Yanjia Huang</a>, <me>Mingyang Wu</me>, <a href="https://shadowiterator.github.io/">Renjie Li</a>, <a href="https://vztu.github.io/">Zhengzhong Tu</a><sup>†</sup>
+              </div>
+              <div class="venue">
+                [ICRA 2026] ·
+                <a href="https://arxiv.org/abs/2505.07868" target="_blank">Paper</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- All publications grouped by topic; papers are copied in from above by data-topic -->
+        <div id="pub-all" class="d-none">
+          <div class="pub-topic" data-topic="video-generation">
+            <div class="pub-topic-title">Video Generation</div>
+          </div>
+          <div class="pub-topic" data-topic="video-distillation">
+            <div class="pub-topic-title">Video Distillation</div>
+          </div>
+          <div class="pub-topic" data-topic="generative-evaluation">
+            <div class="pub-topic-title">Generative Evaluation</div>
+          </div>
+          <div class="pub-topic" data-topic="low-level-vision">
+            <div class="pub-topic-title">Low-level Vision</div>
+          </div>
+          <div class="pub-topic" data-topic="embodied-ai">
+            <div class="pub-topic-title">Embodied AI</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="sec-wrapper bio-wrapper" id="Services">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col col-wrapper">
+            <div class="section-title">Professional Services</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col col-wrapper content-pad">
+            <li>
+              Workshop Organizer: <a href="https://vidgen-bench-eval.github.io/" target="_blank" rel="noopener noreferrer">VGBE@CVPR2026</a>, <a href="https://embodied4arts.github.io/" target="_blank" rel="noopener noreferrer">Embodied4Arts@RSS2026</a>
+            </li>
+          </div>
         </div>
       </div>
     </div>
