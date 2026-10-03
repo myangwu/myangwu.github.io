@@ -147,8 +147,8 @@ nav {
 
 @media (min-width: 576px) {
   .home-wrapper .picture img {
-    max-width: 200px;
-    margin-top: 10px;
+    max-width: 220px;
+    margin-top: 6px;
   }
 }
 
@@ -174,10 +174,18 @@ nav {
   margin: 18px 0 0;
 }
 
+.home-wrapper .description .seeking-line {
+  color: #d1453b;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.5;
+  margin: 22px 0 0;
+}
+
 @media (min-width: 576px) {
   .home-wrapper .description {
     padding-top: 0;
-    padding-left: calc(48px + 7%);
+    padding-left: calc(40px + 5%);
   }
 }
 
@@ -491,6 +499,11 @@ nav {
   .home-wrapper .description .email-line {
     font-size: 15px;
     margin-top: 16px;
+  }
+
+  .home-wrapper .description .seeking-line {
+    font-size: 15px;
+    margin-top: 18px;
   }
 
   .home-wrapper .interests {
