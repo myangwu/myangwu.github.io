@@ -9,7 +9,6 @@ $(function () {
 
 $(function () {
   var $toggle = $('#pub-toggle');
-  var $title = $('#pub-title');
   var $selected = $('#pub-selected');
   var $all = $('#pub-all');
 
@@ -29,7 +28,6 @@ $(function () {
     var showAll = $all.hasClass('d-none');
     $all.toggleClass('d-none', !showAll);
     $selected.toggleClass('d-none', showAll);
-    $title.text(showAll ? 'Publications' : 'Selected Publications');
     $toggle.text(showAll ? '(Selected)' : '(All)').attr('aria-expanded', showAll);
   });
 })
