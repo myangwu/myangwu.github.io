@@ -247,16 +247,12 @@ nav {
  * Publications
  *------------------*/
 
-.pub-wrapper .title a,
-.pub-wrapper .title span {
+.pub-wrapper .title a {
+  color: var(--link-blue);
   font-weight: 500;
   font-family: var(--primary-font);
   font-size: 18px;
   line-height: 1.4;
-}
-
-.pub-wrapper .title a {
-  color: var(--link-blue);
 }
 
 .pub-wrapper .title a:hover {
@@ -534,8 +530,7 @@ nav {
     margin-bottom: 0.45em;
   }
 
-  .pub-wrapper .title a,
-  .pub-wrapper .title span {
+  .pub-wrapper .title a {
     font-size: 17px;
     line-height: 1.45;
   }
