@@ -10,6 +10,8 @@
 
 .homepage {
   --primary-font: 'Crimson Pro', Georgia, serif;
+  --content-max-width: 884px;
+  font-size: 16.5px;
 }
 
 body {
@@ -24,7 +26,7 @@ body {
 
 body .container,
 body .container-fluid {
-  max-width: 900px;
+  max-width: var(--content-max-width, 900px);
 }
 
 body .row {
@@ -173,14 +175,12 @@ nav {
 }
 
 .home-wrapper .description .email-line {
-  font-size: 15px;
   line-height: 1.5;
   margin: 18px 0 0;
 }
 
 .home-wrapper .description .seeking-line {
   color: #d1453b;
-  font-size: 16px;
   font-weight: 600;
   line-height: 1.5;
   margin: 22px 0 0;
@@ -226,7 +226,6 @@ nav {
 }
 
 .home-wrapper .bio-text {
-  font-size: 16px;
   line-height: 1.65;
   margin: 0;
 }
@@ -267,17 +266,16 @@ nav {
 }
 
 .pub-wrapper .authors a {
-  color: var(--link-blue);
-  text-decoration: underline;
+  color: inherit;
 }
 
-.pub-wrapper .authors a:hover {
-  color: var(--link-blue-hover);
+.pub-wrapper .authors a:focus-visible {
+  text-decoration: underline;
 }
 
 .pub-wrapper .authors me {
   color: var(--text-color);
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .pub-wrapper .venue {
@@ -305,7 +303,7 @@ nav {
 
 .pub-topic-title {
   color: var(--muted-blue-gray);
-  font-size: 17px;
+  font-size: 19px;
   font-weight: 600;
   margin-bottom: 12px;
 }
@@ -501,12 +499,10 @@ nav {
   }
 
   .home-wrapper .description .email-line {
-    font-size: 15px;
     margin-top: 16px;
   }
 
   .home-wrapper .description .seeking-line {
-    font-size: 15px;
     margin-top: 18px;
   }
 
@@ -531,7 +527,6 @@ nav {
   }
 
   .pub-wrapper .title a {
-    font-size: 17px;
     line-height: 1.45;
   }
 
