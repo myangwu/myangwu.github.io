@@ -62,6 +62,21 @@ a:hover {
   padding-bottom: 0;
 }
 
+.section-title.has-divider {
+  position: relative;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #dedede;
+}
+
+.section-title.has-divider::after {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 48px;
+  border-bottom: 1px solid var(--link-blue);
+  content: '';
+}
+
 .col-wrapper {
   padding-left: 0;
   padding-right: 0;
@@ -240,6 +255,66 @@ nav {
   margin-top: 0;
   margin-bottom: 0;
   padding-left: 2.5em;
+}
+
+/*------------------
+ * Education
+ *------------------*/
+
+.education-entry {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 16px;
+  font-size: 15px;
+  font-weight: 350;
+}
+
+.education-entry + .education-entry {
+  margin-top: 16px;
+}
+
+.education-logo {
+  display: block;
+  height: auto;
+}
+
+.education-school {
+  margin: 0;
+  font-size: 17px;
+  font-weight: inherit;
+  line-height: 1.25;
+}
+
+.education-entry p {
+  margin: 0;
+}
+
+.education-degree,
+.education-location {
+  font-style: italic;
+}
+
+.education-meta {
+  color: #606060;
+  text-align: right;
+}
+
+@media (max-width: 575.98px) {
+  .education-entry {
+    grid-template-columns: auto minmax(0, 1fr);
+    row-gap: 4px;
+  }
+
+  .education-logo {
+    grid-row: span 2;
+    align-self: start;
+    width: 56px;
+  }
+
+  .education-meta {
+    text-align: left;
+  }
 }
 
 /*------------------
